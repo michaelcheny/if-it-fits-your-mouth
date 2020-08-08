@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: url("../assets/images/chineseFood.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  color: ivory;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.91);
+  z-index: -1;
+}
+/*# sourceMappingURL=main.css.map */
