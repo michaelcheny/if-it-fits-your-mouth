@@ -1,22 +1,62 @@
+@import "./intro";
+@import "./footer";
+
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  background: url("../assets/images/chineseFood.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  color: ivory;
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba($color: #000000, $alpha: 0.91);
-  z-index: -1;
+body {
+  --text-color: ivory;
+  font-family: "Roboto Mono", monospace;
+  // background: url("../assets/images/cookiesOranges.jpg");
+  // background: url("../assets/images/chineseFood.jpg");
+  background: #323437;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text-color);
+
+  --font-header: "Space Mono";
+  font-size: 13px;
+}
+
+.grid-container {
+  border: 1px black solid;
+  height: 100vh;
+  width: 1200px;
+  display: grid;
+  grid-template-rows: 100px auto 100px;
+  justify-content: space-evenly;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  // border: 1px red solid;
+  display: flex;
+  // justify-content: center;
+}
+
+h1 {
+  font-family: var(--font-header);
+}
+
+a {
+  color: var(--text-color);
 }
