@@ -9,9 +9,7 @@ const App = () => {
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Esc" || e.key === "Escape") {
-        setShowMenu((prev) => !prev);
-      }
+      if (e.key === "Esc" || e.key === "Escape") setShowMenu((prev) => !prev);
     });
   }, []);
 
