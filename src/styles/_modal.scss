@@ -11,20 +11,13 @@
   background: rgba(0, 0, 0, 0.5);
 
   form {
-    // background-color: var(--bg-secondary);
     background-color: darkslategray;
     border-radius: 0.25em;
-
     display: grid;
     grid-template-rows: 60px auto;
-    // flex-direction: column;
-    // justify-content: space-evenly;
-    // align-items: center;
-    // padding: 0.4em;
     overflow: auto;
-
     width: 500px;
-    height: 600px;
+    height: 300px;
 
     input {
       border: none;
@@ -34,6 +27,21 @@
       padding: 0 1em;
       line-height: 1em;
       font-size: 18px;
+    }
+
+    .selections {
+      overflow-y: auto;
+
+      div {
+        height: 20px;
+        padding: 0 1em;
+        margin: 0.2em 0;
+
+        &:hover {
+          cursor: pointer;
+          background-color: darkviolet;
+        }
+      }
     }
   }
 }

@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import CommandLine from "./components/CommandLine";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import UserForm from "./components/UserForm";
 import "./styles/main.css";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+
+  const [appState, setAppState] = useState<string>("intro");
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -13,14 +16,19 @@ const App = () => {
     });
   }, []);
 
+  const renderMain = () => {
+    if (appState === "intro") return <Intro setThing={setAppState} />;
+    if (appState === "user-form") return <UserForm setThing={setAppState} />;
+  };
+
   return (
     <>
       {showMenu && <CommandLine showMenu={setShowMenu} />}
       <div className="grid-container">
-        <div className="header">If It Fits Your Mouth</div>
-        <div className="main-content">
-          <Intro />
+        <div className="header">
+          <h3>If It Fits Your Mouth</h3>
         </div>
+        <div className="main-content">{renderMain()}</div>
         <Footer />
       </div>
     </>

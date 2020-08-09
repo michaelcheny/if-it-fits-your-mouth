@@ -31,14 +31,15 @@ body {
 
   --font-header: "Space Mono";
   font-size: 13px;
+  line-height: 20px;
 }
 
 .grid-container {
-  border: 1px black solid;
+  // border: 1px black solid;
   height: 100vh;
-  width: 1200px;
+  // max-width: 1200px;
   display: grid;
-  grid-template-rows: 80px auto 100px;
+  grid-template-rows: 80px auto 120px;
   justify-content: space-evenly;
 }
 
@@ -49,14 +50,21 @@ body {
 }
 
 .main-content {
-  // border: 1px red solid;
+  border: 1px red solid;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 5em;
+  // place-items: center;
+  width: 900px;
+  // line-height: 20px;
+
   // justify-content: center;
 }
 
-h1 {
-  font-family: var(--font-header);
-}
+// h1 {
+//   font-family: var(--font-header);
+// }
 
 a {
   color: var(--text-color);

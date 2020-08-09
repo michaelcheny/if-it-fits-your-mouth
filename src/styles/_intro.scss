@@ -1,22 +1,29 @@
 .intro-box {
-  border: 1px black solid;
-  // background: url("../assets/images/choppingBoard.jpg");
-  // background-size: cover;
-  // background: rgba($color: black, $alpha: 1);
+  // border: 1px black solid;
   border-radius: 2px;
-  // width: 100%;
-  // height: 90vh;
-  padding: 5em;
+  width: 500px;
+  height: 300px;
+  // padding: 5em;
   // position: relative;
   // z-index: 5;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
-// .overlay {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   width: 100%;
-//   height: 100%;
-//   background: rgba($color: #000000, $alpha: 0.68);
-//   z-index: -1;
-// }
+  // .gender-buttons {
+  //   align-self: center;
+
+  button {
+    background-color: dimgrey;
+    padding: 5px 8px;
+    border-radius: 2px;
+    margin: 0 1em;
+    outline: none;
+    border: none;
+    &:hover {
+      background-color: darkslategray;
+      cursor: pointer;
+    }
+    // }
+  }
+}

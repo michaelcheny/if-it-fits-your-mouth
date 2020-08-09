@@ -2,13 +2,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 .intro-box {
-  border: 1px black solid;
   border-radius: 2px;
-  padding: 5em;
+  width: 500px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.intro-box button {
+  background-color: dimgrey;
+  padding: 5px 8px;
+  border-radius: 2px;
+  margin: 0 1em;
+  outline: none;
+  border: none;
+}
+
+.intro-box button:hover {
+  background-color: darkslategray;
+  cursor: pointer;
 }
 
 #footer {
-  border: 1px black solid;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,7 +46,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  line-height: 20px;
 }
 
 .command {
@@ -60,7 +82,7 @@
       grid-template-rows: 60px auto;
   overflow: auto;
   width: 500px;
-  height: 600px;
+  height: 300px;
 }
 
 .menu-modal form input {
@@ -71,6 +93,21 @@
   padding: 0 1em;
   line-height: 1em;
   font-size: 18px;
+}
+
+.menu-modal form .selections {
+  overflow-y: auto;
+}
+
+.menu-modal form .selections div {
+  height: 20px;
+  padding: 0 1em;
+  margin: 0.2em 0;
+}
+
+.menu-modal form .selections div:hover {
+  cursor: pointer;
+  background-color: darkviolet;
 }
 
 * {
@@ -105,16 +142,15 @@ body {
   color: var(--text-color);
   --font-header: "Space Mono";
   font-size: 13px;
+  line-height: 20px;
 }
 
 .grid-container {
-  border: 1px black solid;
   height: 100vh;
-  width: 1200px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 80px auto 100px;
-      grid-template-rows: 80px auto 100px;
+  -ms-grid-rows: 80px auto 120px;
+      grid-template-rows: 80px auto 120px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -133,13 +169,17 @@ body {
 }
 
 .main-content {
+  border: 1px red solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-h1 {
-  font-family: var(--font-header);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 900px;
 }
 
 a {

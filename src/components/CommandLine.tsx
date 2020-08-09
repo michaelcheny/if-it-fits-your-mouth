@@ -18,6 +18,13 @@ const CommandLine = ({ showMenu }: MenuProps) => {
     <div className="menu-modal">
       <form ref={insideNode}>
         <input type="text" placeholder="Type " ref={input} />
+        <div className="selections">
+          <div>thiing</div>
+          <div>thiing</div>
+          <div>thiing</div>
+          <div>thiing</div>
+          <div>thiing</div>
+        </div>
         {/* <select>
           <option value="">sdfjksdkjfhsjdkf</option>
         </select> */}
