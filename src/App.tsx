@@ -24,7 +24,8 @@ const App = () => {
     if (appState === "intro") return <Intro setThing={setAppState} />;
     if (appState === "user-form")
       return <UserForm user={user} setUser={setUser} setThing={setAppState} />;
-    if (appState === "result") return user ? <Results user={user} setThing={setAppState} /> : null;
+    if (appState === "result")
+      return user ? <Results user={user} setThing={setAppState} /> : "Enter your stats first";
   };
 
   return (

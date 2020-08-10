@@ -31,9 +31,9 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
 
   return (
     <div className="menu-modal">
-      <form ref={insideNode}>
-        <input ref={input} type="text" placeholder="Type " tabIndex={0} />
-        <FocusTrap>
+      <FocusTrap>
+        <form ref={insideNode}>
+          <input ref={input} type="text" placeholder="Type " tabIndex={0} />
           <div className="selections">
             <div tabIndex={0} onKeyDown={handleKeyPress} id="intro">
               Return to Main Menu
@@ -51,11 +51,11 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
               thiing
             </div>
           </div>
-        </FocusTrap>
-        {/* <select>
+          {/* <select>
           <option value="">sdfjksdkjfhsjdkf</option>
         </select> */}
-      </form>
+        </form>
+      </FocusTrap>
     </div>
   );
 };
