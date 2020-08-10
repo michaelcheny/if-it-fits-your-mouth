@@ -10,9 +10,6 @@
   flex-direction: column;
   justify-content: space-evenly;
 
-  // .gender-buttons {
-  //   align-self: center;
-
   button {
     background-color: dimgrey;
     padding: 5px 8px;
@@ -24,7 +21,6 @@
       background-color: darkslategray;
       cursor: pointer;
     }
-    // }
   }
 }
 

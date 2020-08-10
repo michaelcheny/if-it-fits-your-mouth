@@ -1,6 +1,7 @@
 import React from "react";
-import { ChangeAppProps } from "../interfaces/appstate.interface";
+// import { ChangeAppProps } from "../interfaces/appstate.interface";
 import { useForm } from "react-hook-form";
+import { User } from "../interfaces/user.interface";
 
 type FormInput = {
   activity_level: number;
@@ -11,7 +12,13 @@ type FormInput = {
   weight: number;
 };
 
-const UserForm = ({ setThing }: ChangeAppProps) => {
+type UserFormProps = {
+  setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
+  setThing: React.Dispatch<React.SetStateAction<string>>;
+  user: User | any;
+};
+
+const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
   const { register, handleSubmit } = useForm<FormInput>();
 
   const onSubmit = (data: FormInput) => {
@@ -20,10 +27,14 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
       age: Number(data.age),
       gender: data.gender,
       weight: Number(data.weight),
-      height: Number(data.feet) * 12 + Number(data.inches),
+      height: {
+        feet: Number(data.feet),
+        inches: Number(data.inches),
+      },
     };
     console.log(userAttributes);
-    setThing("calculator-1");
+    setUser(userAttributes);
+    setThing("result");
   };
 
   return (
@@ -33,13 +44,13 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
         <div className="selection">
           <label id="gender">Gender</label>
           <div className="gender-select">
-            {/* <select name="gender" id="gender"> */}
             <div className="radio-group">
               <input
                 type="radio"
                 id="male"
                 name="gender"
                 value="male"
+                defaultChecked={user && user.gender === "male"}
                 ref={register({ required: true })}
               />{" "}
               <label id="male"> Male</label>
@@ -50,11 +61,11 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
                 id="female"
                 name="gender"
                 value="female"
+                defaultChecked={user && user.gender === "female"}
                 ref={register({ required: true })}
               />{" "}
               <label id="female"> Female</label>
             </div>
-            {/* </select> */}
           </div>
         </div>
         {/* AGE */}
@@ -64,7 +75,7 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
             type="number"
             id="age"
             name="age"
-            defaultValue="21"
+            defaultValue={(user && user.age) || 21}
             ref={register({ required: true, min: 18, max: 75 })}
           />
         </div>
@@ -77,7 +88,7 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
                 name="feet"
                 id="feet"
                 className="height"
-                defaultValue="5"
+                defaultValue={(user && user.height.feet) || 5}
                 ref={register({ required: true })}
               >
                 <option value="1">1</option>
@@ -95,7 +106,7 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
                 name="inches"
                 id="inches"
                 className="height"
-                defaultValue="1"
+                defaultValue={(user && user.height.inches) || 1}
                 ref={register({ required: true })}
               >
                 <option value="1">1</option>
@@ -121,7 +132,7 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
           <input
             type="number"
             name="weight"
-            defaultValue="100"
+            defaultValue={(user && user.weight) || 100}
             ref={register({ required: true, min: 50 })}
           />
         </div>
@@ -132,7 +143,7 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
             name="activity_level"
             placeholder="Activity level"
             id="activity_level"
-            defaultValue={1}
+            defaultValue={(user && user.activity_level) || 1}
             ref={register({ required: true })}
           >
             <option value="1">Little to no exercise</option>

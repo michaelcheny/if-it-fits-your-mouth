@@ -1,6 +1,5 @@
 import React from "react";
 import { ChangeAppProps } from "../interfaces/appstate.interface";
-// import Container from "@material-ui/core/Container";
 
 const Intro = ({ setThing }: ChangeAppProps) => {
   return (
@@ -13,10 +12,6 @@ const Intro = ({ setThing }: ChangeAppProps) => {
       <p>
         <button onClick={() => setThing("user-form")}>Start</button>
       </p>
-      {/* <div className="gender-buttons">
-        <button>Male</button>
-        <button>Female</button>
-      </div> */}
     </div>
   );
 };

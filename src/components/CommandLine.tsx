@@ -16,18 +16,17 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
 
   const insideNode = useClickOutside(() => showMenu(false));
 
+  const activateTrapCard = (selection: string) => {
+    setThing(selection);
+    showMenu(false);
+  };
+
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key !== "Enter") return;
     e.preventDefault();
     console.log(e.currentTarget.id);
-    if (e.currentTarget.id === "intro") {
-      setThing("intro");
-      showMenu(false);
-    }
-    if (e.currentTarget.id === "user") {
-      setThing("user-form");
-      showMenu(false);
-    }
+    activateTrapCard(e.currentTarget.id);
+    // activateTrapCard(e.currentTarget.id);
   };
 
   return (
@@ -39,11 +38,11 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleKeyPress} id="intro">
               Return to Main Menu
             </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress} id="user">
+            <div tabIndex={0} onKeyDown={handleKeyPress} id="user-form">
               Edit User Stats
             </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress} id="calc-1">
-              TDEE Calculator
+            <div tabIndex={0} onKeyDown={handleKeyPress} id="result">
+              Results
             </div>
             <div tabIndex={0} onKeyDown={handleKeyPress}>
               thiing

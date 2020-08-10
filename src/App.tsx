@@ -4,12 +4,15 @@ import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 import Results from "./components/Results";
 import UserForm from "./components/UserForm";
+import { User } from "./interfaces/user.interface";
 import "./styles/main.css";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const [appState, setAppState] = useState<string>("intro");
+
+  const [user, setUser] = useState<User | undefined>(undefined);
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -19,8 +22,9 @@ const App = () => {
 
   const renderMain = () => {
     if (appState === "intro") return <Intro setThing={setAppState} />;
-    if (appState === "user-form") return <UserForm setThing={setAppState} />;
-    if (appState === "calculator-1") return <Results />;
+    if (appState === "user-form")
+      return <UserForm user={user} setUser={setUser} setThing={setAppState} />;
+    if (appState === "result") return user ? <Results user={user} setThing={setAppState} /> : null;
   };
 
   return (
