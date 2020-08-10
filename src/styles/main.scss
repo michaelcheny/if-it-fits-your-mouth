@@ -51,13 +51,14 @@ body {
 }
 
 .main-content {
-  border: 1px red solid;
+  // border: 1px red solid;
   display: flex;
   justify-content: center;
   align-items: center;
+  // height: 100vh;
   // padding: 5em;
   // place-items: center;
-  width: 900px;
+  // width: 900px;
   // line-height: 20px;
 
   // justify-content: center;
@@ -69,4 +70,10 @@ body {
 
 a {
   color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    width: 900px;
+  }
 }

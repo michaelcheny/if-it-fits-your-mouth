@@ -1,33 +1,84 @@
 import React from "react";
 import { ChangeAppProps } from "../interfaces/appstate.interface";
+import { useForm } from "react-hook-form";
+
+type FormInput = {
+  activity_level: number;
+  gender: string;
+  age: number;
+  feet: number;
+  inches: number;
+  weight: number;
+};
 
 const UserForm = ({ setThing }: ChangeAppProps) => {
+  const { register, handleSubmit } = useForm<FormInput>();
+
+  const onSubmit = (data: FormInput) => {
+    const userAttributes = {
+      activity_level: Number(data.activity_level),
+      age: Number(data.age),
+      gender: data.gender,
+      weight: Number(data.weight),
+      height: Number(data.feet) * 12 + Number(data.inches),
+    };
+    console.log(userAttributes);
+  };
+
   return (
     <div className="user-form-section">
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {/* GENDER */}
         <div className="selection">
           <label id="gender">Gender</label>
           <div className="gender-select">
+            {/* <select name="gender" id="gender"> */}
             <div className="radio-group">
-              <input type="radio" id="male" name="gender" value="male" /> <label id="male"> Male</label>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                ref={register({ required: true })}
+              />{" "}
+              <label id="male"> Male</label>
             </div>
             <div className="radio-group">
-              <input type="radio" id="female" name="gender" value="female" />{" "}
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+                ref={register({ required: true })}
+              />{" "}
               <label id="female"> Female</label>
             </div>
+            {/* </select> */}
           </div>
         </div>
         {/* AGE */}
         <div className="selection">
           <label id="age">Age</label>
-          <input type="number" id="age" defaultValue="21" />
+          <input
+            type="number"
+            id="age"
+            name="age"
+            defaultValue="21"
+            ref={register({ required: true, min: 18, max: 75 })}
+          />
         </div>
         {/* HEIGHT */}
         <div className="selection">
           <label id="height">Height</label>
           <div style={{ display: "flex", justifyContent: "space-evenly" }}>
             <div style={{ display: "inline-flex" }}>
-              <select name="feet" id="feet" className="height" defaultValue="5">
+              <select
+                name="feet"
+                id="feet"
+                className="height"
+                defaultValue="5"
+                ref={register({ required: true })}
+              >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -39,7 +90,13 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
               <label id="feet"> Ft</label>
             </div>
             <div style={{ display: "inline-flex" }}>
-              <select name="inches" id="inches" className="height" defaultValue="1">
+              <select
+                name="inches"
+                id="inches"
+                className="height"
+                defaultValue="1"
+                ref={register({ required: true })}
+              >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -60,7 +117,12 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
         {/* WEIGHT */}
         <div className="selection">
           <label id="weight">Weight</label>
-          <input type="number" name="weight" defaultValue="100" />
+          <input
+            type="number"
+            name="weight"
+            defaultValue="100"
+            ref={register({ required: true, min: 50 })}
+          />
         </div>
         {/* ACTIVITY LEVEL */}
         <div className="selection">
@@ -70,12 +132,13 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
             placeholder="Activity level"
             id="activity_level"
             defaultValue={1}
+            ref={register({ required: true })}
           >
-            <option value="1">Lazy</option>
-            <option value="2">Sort of Lazy</option>
-            <option value="3">Not Lazy</option>
-            <option value="4">Active</option>
-            <option value="5">Very Active</option>
+            <option value="1">Little to no exercise</option>
+            <option value="2">Lightly active (1-3x week)</option>
+            <option value="3">Moderdately active (3-5x week)</option>
+            <option value="4">Very Active (hard exercise 6-7x week)</option>
+            <option value="5">Super Active (very physical job or professional athelete)</option>
           </select>
         </div>
         {/* SUBMIT */}
