@@ -23,6 +23,7 @@ const UserForm = ({ setThing }: ChangeAppProps) => {
       height: Number(data.feet) * 12 + Number(data.inches),
     };
     console.log(userAttributes);
+    setThing("calculator-1");
   };
 
   return (

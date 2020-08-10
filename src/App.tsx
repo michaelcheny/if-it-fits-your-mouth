@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CommandLine from "./components/CommandLine";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import Results from "./components/Results";
 import UserForm from "./components/UserForm";
 import "./styles/main.css";
 
@@ -19,11 +20,12 @@ const App = () => {
   const renderMain = () => {
     if (appState === "intro") return <Intro setThing={setAppState} />;
     if (appState === "user-form") return <UserForm setThing={setAppState} />;
+    if (appState === "calculator-1") return <Results />;
   };
 
   return (
     <>
-      {showMenu && <CommandLine showMenu={setShowMenu} />}
+      {showMenu && <CommandLine showMenu={setShowMenu} setThing={setAppState} />}
       <div className="grid-container">
         <div className="header">
           <h3>If It Fits Your Mouth</h3>

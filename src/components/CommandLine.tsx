@@ -3,9 +3,10 @@ import { useClickOutside } from "../hooks/useClickOutside";
 
 type MenuProps = {
   showMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  setThing: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const CommandLine = ({ showMenu }: MenuProps) => {
+const CommandLine = ({ showMenu, setThing }: MenuProps) => {
   const input = useRef<HTMLInputElement>(null);
 
   useLayoutEffect(() => {
