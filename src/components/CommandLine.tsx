@@ -15,16 +15,33 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
 
   const insideNode = useClickOutside(() => showMenu(false));
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      console.log("poop");
+      console.log(e);
+    }
+  };
+
   return (
     <div className="menu-modal">
       <form ref={insideNode}>
-        <input type="text" placeholder="Type " ref={input} />
+        <input ref={input} type="text" placeholder="Type " tabIndex={0} />
         <div className="selections">
-          <div>thiing</div>
-          <div>thiing</div>
-          <div>thiing</div>
-          <div>thiing</div>
-          <div>thiing</div>
+          <div tabIndex={0} onKeyDown={(e) => handleKeyPress(e)}>
+            thiing
+          </div>
+          <div tabIndex={0} onKeyDown={handleKeyPress}>
+            thiing
+          </div>
+          <div tabIndex={0} onKeyDown={handleKeyPress}>
+            thiing
+          </div>
+          <div tabIndex={0} onKeyDown={handleKeyPress}>
+            thiing
+          </div>
+          <div tabIndex={0} onKeyDown={handleKeyPress}>
+            thiing
+          </div>
         </div>
         {/* <select>
           <option value="">sdfjksdkjfhsjdkf</option>

@@ -109,11 +109,17 @@
   height: 20px;
   padding: 0 1em;
   margin: 0.2em 0;
+  border: none;
 }
 
 .menu-modal form .selections div:hover {
   cursor: pointer;
   background-color: darkviolet;
+}
+
+.menu-modal form .selections div:focus {
+  background: darkviolet;
+  outline: none;
 }
 
 .user-form-section form {
