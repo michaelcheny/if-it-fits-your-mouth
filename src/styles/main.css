@@ -110,20 +110,19 @@
   background-color: darkviolet;
 }
 
-.user-form-section {
-  border: 1px black solid;
+.user-form-section form {
+  width: 250px;
 }
 
-.user-form-section form {
-  width: 300px;
+.user-form-section form .selection {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 200px;
-      grid-template-columns: auto 200px;
+  -ms-grid-columns: auto 160px;
+      grid-template-columns: auto 160px;
 }
 
 .user-form-section form label {
-  height: 50px;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,8 +131,39 @@
           align-items: center;
 }
 
+.user-form-section form input {
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  background: none;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.user-form-section form input:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .user-form-section form select {
-  height: 40px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: none;
+  outline: none;
+  background: none;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.user-form-section form select:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .user-form-section form .gender-select {
@@ -159,6 +189,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.user-form-section form .submit-btn {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 * {
