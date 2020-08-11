@@ -1,0 +1,26 @@
+$themes: (
+  light: (
+    color-background: #fffff0,
+    color-text: black,
+    btn-hover: darkslategray,
+    cmd-bg: #495057,
+    cmd-hover: #adb5bd,
+    btn:
+      rgba(
+        $color: #495057,
+        $alpha: 0.4,
+      ),
+  ),
+  dark: (
+    color-background: #323437,
+    color-text: ivory,
+    btn-hover: darkslategray,
+    cmd-bg: darkslategray,
+    cmd-hover: darkviolet,
+    btn:
+      rgba(
+        $color: dimgrey,
+        $alpha: 0.4,
+      ),
+  ),
+);

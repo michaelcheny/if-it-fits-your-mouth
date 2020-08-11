@@ -1,5 +1,4 @@
 import React from "react";
-// import { ChangeAppProps } from "../interfaces/appstate.interface";
 import { useForm } from "react-hook-form";
 import { User } from "../interfaces/user.interface";
 import { calculateBmr, calculateTdee } from "../helpers/calculations";

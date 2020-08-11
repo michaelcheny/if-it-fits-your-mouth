@@ -27,6 +27,14 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
     activateTrapCard(e.currentTarget.id);
   };
 
+  const handleThemeChange = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    document.documentElement.className = "";
+    document.documentElement.classList.add(`theme-${e.currentTarget.id}`);
+    showMenu(false);
+  };
+
   // Add hiding effect
   const selections = Array.from(
     document.getElementsByClassName("selection") as HTMLCollectionOf<HTMLElement>
@@ -64,9 +72,12 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleKeyPress} id="resources">
               Resources
             </div>
-            {/* <div tabIndex={0} onKeyDown={handleKeyPress}>
-              thiing
-            </div> */}
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="light">
+              Change Theme: Light
+            </div>
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="dark">
+              Change Theme: Dark
+            </div>
           </div>
         </form>
       </div>

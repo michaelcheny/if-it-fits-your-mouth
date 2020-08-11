@@ -38,12 +38,20 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 1.5em;
 }
 
 .command {
   border-radius: 4px;
   padding: 0 4px;
-  background-color: rgba(128, 128, 128, 0.4);
+}
+
+.theme-light .command {
+  background-color: rgba(73, 80, 87, 0.4);
+}
+
+.theme-dark .command {
+  background-color: rgba(105, 105, 105, 0.4);
 }
 
 .menu-modal {
@@ -66,7 +74,6 @@
 }
 
 .menu-modal form {
-  background-color: darkslategray;
   border-radius: 0.25em;
   display: -ms-grid;
   display: grid;
@@ -75,6 +82,14 @@
   overflow: auto;
   width: 400px;
   height: 200px;
+}
+
+.theme-light .menu-modal form {
+  background-color: #495057;
+}
+
+.theme-dark .menu-modal form {
+  background-color: darkslategray;
 }
 
 .menu-modal form input {
@@ -87,7 +102,14 @@
   font-size: 18px;
   font-family: var(--font-header);
   font-size: medium;
-  color: var(--text-color);
+}
+
+.theme-light .menu-modal form input {
+  color: black;
+}
+
+.theme-dark .menu-modal form input {
+  color: ivory;
 }
 
 .menu-modal form .selections {
@@ -103,12 +125,26 @@
 
 .menu-modal form .selections div:hover {
   cursor: pointer;
+}
+
+.theme-light .menu-modal form .selections div:hover {
+  background-color: #adb5bd;
+}
+
+.theme-dark .menu-modal form .selections div:hover {
   background-color: darkviolet;
 }
 
 .menu-modal form .selections div:focus {
-  background: darkviolet;
   outline: none;
+}
+
+.theme-light .menu-modal form .selections div:focus {
+  background-color: #adb5bd;
+}
+
+.theme-dark .menu-modal form .selections div:focus {
+  background-color: darkviolet;
 }
 
 .user-form-section form {
@@ -146,7 +182,14 @@
   outline: none;
   background: none;
   text-align: center;
-  color: var(--text-color);
+}
+
+.theme-light .user-form-section form input {
+  color: black;
+}
+
+.theme-dark .user-form-section form input {
+  color: ivory;
 }
 
 .user-form-section form input:hover {
@@ -162,7 +205,14 @@
   border: none;
   outline: none;
   background: none;
-  color: var(--text-color);
+}
+
+.theme-light .user-form-section form select {
+  color: black;
+}
+
+.theme-dark .user-form-section form select {
+  color: ivory;
 }
 
 .user-form-section form select:hover {
@@ -200,7 +250,18 @@
 
 .user-form-section form .submit-btn {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .user-form-section form .submit-btn {
+  background-color: rgba(73, 80, 87, 0.4);
+}
+
+.theme-dark .user-form-section form .submit-btn {
+  background-color: rgba(105, 105, 105, 0.4);
+}
+
+.user-form-section form .submit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .result-container {
@@ -319,15 +380,26 @@ html {
 }
 
 body {
-  --text-color: ivory;
   font-family: "Roboto Mono", monospace;
-  background: #323437;
-  background-attachment: fixed;
-  background-size: cover;
-  color: var(--text-color);
   --font-header: "Space Mono";
   font-size: 13px;
   line-height: 20px;
+}
+
+.theme-light body {
+  background: #fffff0;
+}
+
+.theme-dark body {
+  background: #323437;
+}
+
+.theme-light body {
+  color: black;
+}
+
+.theme-dark body {
+  color: ivory;
 }
 
 .grid-container {
@@ -365,12 +437,15 @@ body {
           align-items: center;
 }
 
-a {
-  color: var(--text-color);
+.theme-light a {
+  color: black;
+}
+
+.theme-dark a {
+  color: ivory;
 }
 
 button {
-  background-color: dimgrey;
   padding: 5px 8px;
   border-radius: 2px;
   margin: 0 1em;
@@ -378,9 +453,32 @@ button {
   border: none;
 }
 
+.theme-light button {
+  background-color: rgba(73, 80, 87, 0.4);
+}
+
+.theme-dark button {
+  background-color: rgba(105, 105, 105, 0.4);
+}
+
+.theme-light button {
+  color: black;
+}
+
+.theme-dark button {
+  color: ivory;
+}
+
 button:hover {
-  background-color: darkslategray;
   cursor: pointer;
+}
+
+.theme-light button:hover {
+  background-color: darkslategray;
+}
+
+.theme-dark button:hover {
+  background-color: darkslategray;
 }
 
 @media (min-width: 768px) {

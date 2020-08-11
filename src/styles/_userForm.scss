@@ -1,6 +1,4 @@
 .user-form-section {
-  // border: 1px black solid
-
   form {
     width: 300px;
     // height: 500px;
@@ -28,7 +26,7 @@
       outline: none;
       background: none;
       text-align: center;
-      color: var(--text-color);
+      @include theme-aware("color", "color-text");
       &:hover {
         cursor: pointer;
         background-color: rgba($color: #000000, $alpha: 0.1);
@@ -41,9 +39,7 @@
       border: none;
       outline: none;
       background: none;
-      // text-align: center;
-      color: var(--text-color);
-
+      @include theme-aware("color", "color-text");
       &:hover {
         cursor: pointer;
         background-color: rgba($color: #000000, $alpha: 0.1);
@@ -67,7 +63,11 @@
 
     .submit-btn {
       width: 100%;
-      background-color: rgba($color: #000000, $alpha: 0.08);
+      // background-color: rgba($color: #000000, $alpha: 0.08);
+      @include theme-aware("background-color", "btn");
+      &:hover {
+        background-color: rgba($color: #000000, $alpha: 0.1);
+      }
     }
   }
 }

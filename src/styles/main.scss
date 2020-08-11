@@ -1,3 +1,5 @@
+@import "./color-palette";
+@import "./mixins";
 @import "./intro";
 @import "./footer";
 @import "./modal";
@@ -22,18 +24,12 @@ html {
 }
 
 body {
-  --text-color: ivory;
   font-family: "Roboto Mono", monospace;
-  // background: url("../assets/images/cookiesOranges.jpg");
-  // background: url("../assets/images/chineseFood.jpg");
-  background: #323437;
-  background-attachment: fixed;
-  background-size: cover;
-  color: var(--text-color);
-
   --font-header: "Space Mono";
   font-size: 13px;
   line-height: 20px;
+  @include theme-aware("background", "color-background");
+  @include theme-aware("color", "color-text");
 }
 
 .grid-container {
@@ -70,18 +66,19 @@ body {
 // }
 
 a {
-  color: var(--text-color);
+  @include theme-aware("color", "color-text");
 }
 
 button {
-  background-color: dimgrey;
+  @include theme-aware("background-color", "btn");
+  @include theme-aware("color", "color-text");
   padding: 5px 8px;
   border-radius: 2px;
   margin: 0 1em;
   outline: none;
   border: none;
   &:hover {
-    background-color: darkslategray;
+    @include theme-aware("background-color", "btn-hover");
     cursor: pointer;
   }
 }
