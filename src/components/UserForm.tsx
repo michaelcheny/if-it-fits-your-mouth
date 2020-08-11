@@ -32,8 +32,9 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
         inches: Number(data.inches),
       },
     };
-    console.log(userAttributes);
+    // console.log(userAttributes);
     setUser(userAttributes);
+    localStorage.setItem("userStats", JSON.stringify(userAttributes));
     setThing("result");
   };
 

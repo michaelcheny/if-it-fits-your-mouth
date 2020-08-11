@@ -18,6 +18,9 @@ const App = () => {
     document.addEventListener("keydown", (e) => {
       if (e.key === "Esc" || e.key === "Escape") setShowMenu((prev) => !prev);
     });
+
+    const userObj = localStorage.getItem("userStats");
+    setUser(userObj !== null ? JSON.parse(userObj) : undefined);
   }, []);
 
   const renderMain = () => {
