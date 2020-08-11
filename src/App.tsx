@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CommandLine from "./components/CommandLine";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import Resources from "./components/Resources";
 // import Macros from "./components/Macros";
 import Results from "./components/Results";
 import UserForm from "./components/UserForm";
@@ -32,8 +33,7 @@ const App = () => {
       ) : (
         "Enter your stats first"
       );
-    // if (appState === "macros")
-    //   return user ? <Macros user={user} setThing={setAppState} /> : "Enter your stats first";
+    if (appState === "resources") return <Resources />;
   };
 
   return (

@@ -13,6 +13,9 @@ const Footer = () => {
         <span className="command">shift</span> <span className="command">tab</span> - Previous Selection
       </div>
       <div>
+        <span className="command">enter</span> - Select
+      </div>
+      <div>
         Built by{" "}
         <a href="https://michaelchen.dev" target="_blank" rel="noopener noreferrer">
           Michael Chen

@@ -9,14 +9,12 @@ type MenuProps = {
 
 const CommandLine = ({ showMenu, setThing }: MenuProps) => {
   const input = useRef<HTMLInputElement>(null);
-
   const [userInput, setUserInput] = useState("");
+  const insideNode = useClickOutside(() => showMenu(false));
 
   useLayoutEffect(() => {
     if (input.current !== null) input.current.focus();
   });
-
-  const insideNode = useClickOutside(() => showMenu(false));
 
   const activateTrapCard = (selection: string) => {
     setThing(selection);
@@ -26,16 +24,15 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key !== "Enter") return;
     e.preventDefault();
-    console.log(e.currentTarget.id);
     activateTrapCard(e.currentTarget.id);
   };
 
+  // Add hiding effect
   const selections = Array.from(
     document.getElementsByClassName("selection") as HTMLCollectionOf<HTMLElement>
   );
-
   selections.forEach((element) => {
-    if (!element.innerText.toLowerCase().startsWith(userInput)) {
+    if (!element.innerText.toLowerCase().includes(userInput)) {
       element.style.display = "none";
     } else {
       element.style.display = "block";
@@ -43,13 +40,13 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
   });
 
   return (
-    <div className="menu-modal">
-      <FocusTrap>
+    <FocusTrap>
+      <div className="menu-modal">
         <form ref={insideNode}>
           <input
             ref={input}
             type="text"
-            placeholder="Type "
+            placeholder="Type a command"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value.toLowerCase())}
             tabIndex={0}
@@ -64,16 +61,16 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleKeyPress} className="selection" id="result">
               Results
             </div>
-            {/* <div tabIndex={0} onKeyDown={handleKeyPress} id="macros">
-              Macros
+            <div tabIndex={0} onKeyDown={handleKeyPress} id="resources">
+              Resources
             </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress}>
+            {/* <div tabIndex={0} onKeyDown={handleKeyPress}>
               thiing
             </div> */}
           </div>
         </form>
-      </FocusTrap>
-    </div>
+      </div>
+    </FocusTrap>
   );
 };
 
