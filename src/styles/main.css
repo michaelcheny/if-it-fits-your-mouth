@@ -73,8 +73,8 @@
   -ms-grid-rows: 60px auto;
       grid-template-rows: 60px auto;
   overflow: auto;
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
 }
 
 .menu-modal form input {
@@ -236,6 +236,11 @@
       grid-template-columns: 1fr 1fr;
 }
 
+.macros {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
 .goal {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,12 +262,6 @@
 .goal input {
   width: 230px;
   padding: 0.5em 0;
-}
-
-.macro-button {
-  width: 200px;
-  -ms-grid-column-align: center;
-      justify-self: center;
 }
 
 .nums {

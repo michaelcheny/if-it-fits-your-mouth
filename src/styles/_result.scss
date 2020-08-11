@@ -21,6 +21,11 @@
     }
   }
 }
+.macros {
+  justify-self: center;
+  // border: 1px red solid;
+  // font-size: larger;
+}
 
 .goal {
   display: flex;
@@ -36,10 +41,10 @@
   }
 }
 
-.macro-button {
-  width: 200px;
-  justify-self: center;
-}
+// .macro-button {
+//   width: 200px;
+//   justify-self: center;
+// }
 
 .nums {
   font-weight: 900;

@@ -43,12 +43,12 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleKeyPress} id="result">
               Results
             </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress} id="macros">
+            {/* <div tabIndex={0} onKeyDown={handleKeyPress} id="macros">
               Macros
             </div>
             <div tabIndex={0} onKeyDown={handleKeyPress}>
               thiing
-            </div>
+            </div> */}
           </div>
           {/* <select>
           <option value="">sdfjksdkjfhsjdkf</option>

@@ -44,3 +44,36 @@ export const calculateRecommendedCals = (tdee: number, goal: number) => {
 
   return Math.round(tdee * multiplier);
 };
+
+export const calculateMacros = (calGoal: number, weight: number, goal: number) => {
+  let p: number = 0;
+  let f: number = 0;
+  let c: number = 0;
+
+  if (goal < 0 && goal >= -1) {
+    p = weight * 1.02;
+    f = weight * 0.35;
+    c = (calGoal - p * 4 - f * 9) / 4;
+  } else if (goal < -1) {
+    p = weight * 0.965;
+    f = weight * 0.3;
+    c = (calGoal - p * 4 - f * 9) / 4;
+  } else if (goal > 0 && goal <= 1) {
+    p = weight * 1.12;
+    f = weight * 0.57;
+    c = (calGoal - p * 4 - f * 9) / 4;
+  } else if (goal > 1) {
+    p = weight * 1.2;
+    f = weight * 0.62;
+    c = (calGoal - p * 4 - f * 9) / 4;
+  } else {
+    p = weight * 1.025;
+    f = weight * 0.42;
+    c = (calGoal - p * 4 - f * 9) / 4;
+  }
+  return {
+    fats: Math.round(f),
+    protein: Math.round(p),
+    carbs: Math.round(c),
+  };
+};

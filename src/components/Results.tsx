@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { User } from "../interfaces/user.interface";
-import { calculateRecommendedCals } from "../helpers/calculations";
+import { calculateRecommendedCals, calculateMacros } from "../helpers/calculations";
+import Macros from "./Macros";
 
 type ResultProps = {
   user: User | any;
@@ -22,13 +23,10 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
       ...goals,
     };
     setUser(userAttr);
+    localStorage.setItem("userStats", JSON.stringify(userAttr));
   };
 
-  const handleSubmit = () => {
-    console.log(user);
-    localStorage.setItem("userStats", JSON.stringify(user));
-    setThing("macros");
-  };
+  let macros = calculateMacros(user.calGoal, user.weight, goal);
 
   return (
     <div className="result-container">
@@ -71,9 +69,12 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
         </div>
       </div>
 
-      <button className="macro-button" onClick={handleSubmit}>
+      <Macros macros={macros} />
+
+      {/* <button className="macro-button" onClick={handleSubmit}>
         Calculate Macros
-      </button>
+      </button> */}
+
       <div className="legend">
         <p>
           Calorie intake should not fall below 1,200 a day in women or 1,500 a day in men, except under
