@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { User } from "../interfaces/user.interface";
 
 type ResultProps = {
@@ -7,6 +7,13 @@ type ResultProps = {
 };
 
 const Results = ({ user, setThing }: ResultProps) => {
+  const [goal, setGoal] = useState<number>(0);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    setGoal(Number(e.target.value));
+  };
+
   // console.log(user);
   return (
     <div className="result-container">
@@ -24,6 +31,12 @@ const Results = ({ user, setThing }: ResultProps) => {
             <span className="nums">{user.tdee}</span> Calories/day
           </div>
         </div>
+      </div>
+
+      <div className="goal">
+        <p>What are your goals?</p>
+        <p>Lose {goal} pounds a week</p>
+        <input type="range" name="goal" min={-3} max={3} step={1} value={goal} onChange={handleChange} />
       </div>
 
       <div className="legend">
