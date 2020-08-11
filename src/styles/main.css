@@ -17,20 +17,6 @@
           justify-content: space-evenly;
 }
 
-.intro-box button {
-  background-color: dimgrey;
-  padding: 5px 8px;
-  border-radius: 2px;
-  margin: 0 1em;
-  outline: none;
-  border: none;
-}
-
-.intro-box button:hover {
-  background-color: darkslategray;
-  cursor: pointer;
-}
-
 @media (min-width: 768px) {
   .intro-box {
     width: 500px;
@@ -218,8 +204,8 @@
   width: 350px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  -ms-grid-rows: 100px 1fr;
+      grid-template-rows: 100px 1fr;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -227,6 +213,9 @@
 
 .result-container .results {
   width: 200px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
 }
@@ -245,8 +234,12 @@
 }
 
 .legend {
-  font-size: x-small;
-  margin-top: 2em;
+  font-size: 11px;
+  margin-top: 1em;
+}
+
+.legend p {
+  margin: 1em;
 }
 
 * {
@@ -321,6 +314,20 @@ body {
 
 a {
   color: var(--text-color);
+}
+
+button {
+  background-color: dimgrey;
+  padding: 5px 8px;
+  border-radius: 2px;
+  margin: 0 1em;
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  background-color: darkslategray;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

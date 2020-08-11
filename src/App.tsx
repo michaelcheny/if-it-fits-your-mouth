@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CommandLine from "./components/CommandLine";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import Macros from "./components/Macros";
 import Results from "./components/Results";
 import UserForm from "./components/UserForm";
 import { User } from "./interfaces/user.interface";
@@ -9,9 +10,7 @@ import "./styles/main.css";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-
   const [appState, setAppState] = useState<string>("intro");
-
   const [user, setUser] = useState<User | undefined>(undefined);
 
   useEffect(() => {
@@ -29,6 +28,7 @@ const App = () => {
       return <UserForm user={user} setUser={setUser} setThing={setAppState} />;
     if (appState === "result")
       return user ? <Results user={user} setThing={setAppState} /> : "Enter your stats first";
+    if (appState === "macros") return user ? <Macros /> : "Enter your stats first";
   };
 
   return (

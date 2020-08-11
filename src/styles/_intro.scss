@@ -10,18 +10,18 @@
   flex-direction: column;
   justify-content: space-evenly;
 
-  button {
-    background-color: dimgrey;
-    padding: 5px 8px;
-    border-radius: 2px;
-    margin: 0 1em;
-    outline: none;
-    border: none;
-    &:hover {
-      background-color: darkslategray;
-      cursor: pointer;
-    }
-  }
+  // button {
+  //   background-color: dimgrey;
+  //   padding: 5px 8px;
+  //   border-radius: 2px;
+  //   margin: 0 1em;
+  //   outline: none;
+  //   border: none;
+  //   &:hover {
+  //     background-color: darkslategray;
+  //     cursor: pointer;
+  //   }
+  // }
 }
 
 @media (min-width: 768px) {

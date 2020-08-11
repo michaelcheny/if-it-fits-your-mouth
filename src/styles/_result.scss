@@ -3,11 +3,13 @@
   // height: 80%;
   width: 350px;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 100px 1fr;
   justify-content: center;
 
   .results {
+    // border: 1px red solid;
     width: 200px;
+    align-self: center;
     justify-self: center;
     div {
       display: grid;
@@ -23,6 +25,10 @@
 }
 
 .legend {
-  font-size: x-small;
-  margin-top: 2em;
+  font-size: 11px;
+  margin-top: 1em;
+
+  p {
+    margin: 1em;
+  }
 }
