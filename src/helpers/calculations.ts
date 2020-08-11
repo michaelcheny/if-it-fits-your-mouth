@@ -29,3 +29,18 @@ export const calculateTdee = (user: User, bmr: number) => {
 
   return Math.round(bmr * multiplier);
 };
+
+export const calculateRecommendedCals = (tdee: number, goal: number) => {
+  let multiplier = 1;
+  if (goal === -2) multiplier = 0.6;
+  if (goal === -1.5) multiplier = 0.7;
+  if (goal === -1) multiplier = 0.8;
+  if (goal === -0.5) multiplier = 0.9;
+  if (goal === 0) multiplier = 1;
+  if (goal === 0.5) multiplier = 1.1;
+  if (goal === 1) multiplier = 1.2;
+  if (goal === 1.5) multiplier = 1.3;
+  if (goal === 2) multiplier = 1.4;
+
+  return Math.round(tdee * multiplier);
+};

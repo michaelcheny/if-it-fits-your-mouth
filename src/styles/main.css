@@ -201,7 +201,7 @@
 }
 
 .result-container {
-  width: 350px;
+  width: 360px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 100px 1fr;
@@ -250,11 +250,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90px;
+  height: 130px;
+  margin: 1.5em 0;
 }
 
 .goal input {
-  width: 75%;
+  width: 60%;
+  padding: 0.5em 0;
+}
+
+.macro-button {
+  width: 50%;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .nums {
@@ -263,13 +271,26 @@
   margin-right: 5px;
 }
 
+.rec-cals {
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
 .legend {
-  font-size: 11px;
+  font-size: 10px;
   margin-top: 2em;
 }
 
 .legend p {
   margin: 1em;
+}
+
+@media (min-width: 768px) {
+  .result-container {
+    width: 450px;
+  }
 }
 
 * {
