@@ -1,6 +1,5 @@
 import React from "react";
 import { User } from "../interfaces/user.interface";
-import { calculateBmr, calculateTdee } from "../helpers/calculations";
 
 type ResultProps = {
   user: User | any;
@@ -8,31 +7,24 @@ type ResultProps = {
 };
 
 const Results = ({ user, setThing }: ResultProps) => {
-  const bmr = calculateBmr(user);
-
-  console.log(user);
+  // console.log(user);
   return (
     <div className="result-container">
       <div className="results">
         <div>
           <div>BMR</div>
           <div>
-            <span className="nums">{bmr} </span> Calories/day
+            <span className="nums">{user.bmr} </span> Calories/day
           </div>
         </div>
 
         <div>
           <div>TDEE</div>
           <div>
-            <span className="nums">{calculateTdee(user, bmr)}</span> Calories/day
+            <span className="nums">{user.tdee}</span> Calories/day
           </div>
         </div>
       </div>
-
-      {/* <div>
-        <p>change your activity level</p>
-        <input type="range" name="" id="" />
-      </div> */}
 
       <div className="legend">
         <p>

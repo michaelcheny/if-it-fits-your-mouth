@@ -8,4 +8,6 @@ export interface User {
   };
   weight: number;
   activity_level: number;
+  bmr?: number;
+  tdee?: number;
 }

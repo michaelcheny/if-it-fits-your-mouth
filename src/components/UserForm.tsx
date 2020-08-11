@@ -2,6 +2,7 @@ import React from "react";
 // import { ChangeAppProps } from "../interfaces/appstate.interface";
 import { useForm } from "react-hook-form";
 import { User } from "../interfaces/user.interface";
+import { calculateBmr, calculateTdee } from "../helpers/calculations";
 
 type FormInput = {
   activity_level: number;
@@ -22,7 +23,7 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
   const { register, handleSubmit } = useForm<FormInput>();
 
   const onSubmit = (data: FormInput) => {
-    const userAttributes = {
+    let userAttributes = {
       activity_level: Number(data.activity_level),
       age: Number(data.age),
       gender: data.gender,
@@ -32,7 +33,10 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
         inches: Number(data.inches),
       },
     };
-    // console.log(userAttributes);
+    const bmr = calculateBmr(userAttributes);
+    const tdee = calculateTdee(userAttributes, bmr);
+    const results = { bmr, tdee };
+    userAttributes = { ...userAttributes, ...results };
     setUser(userAttributes);
     localStorage.setItem("userStats", JSON.stringify(userAttributes));
     setThing("result");
@@ -124,7 +128,6 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
                 <option value="9">9</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
-                <option value="12">12</option>
               </select>
               <label id="inches" className="labels">
                 {" "}
