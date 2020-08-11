@@ -1,0 +1,28 @@
+.result-container {
+  // border: 1px red solid;
+  // height: 80%;
+  width: 350px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+
+  .results {
+    width: 200px;
+    justify-self: center;
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.nums {
+  font-weight: 900;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.legend {
+  font-size: x-small;
+  margin-top: 2em;
+}

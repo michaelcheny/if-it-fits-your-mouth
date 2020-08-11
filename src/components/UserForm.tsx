@@ -99,7 +99,10 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
                 <option value="6">6</option>
                 <option value="7">7</option>
               </select>
-              <label id="feet"> Ft</label>
+              <label id="feet" className="labels">
+                {" "}
+                Ft
+              </label>
             </div>
             <div style={{ display: "inline-flex" }}>
               <select
@@ -122,7 +125,10 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select>
-              <label id="inches"> In</label>
+              <label id="inches" className="labels">
+                {" "}
+                In
+              </label>
             </div>
           </div>
         </div>

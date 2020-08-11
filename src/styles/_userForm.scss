@@ -8,6 +8,10 @@
     .selection {
       display: grid;
       grid-template-columns: auto 165px;
+
+      .labels {
+        margin-left: 5px;
+      }
     }
 
     label {
@@ -39,6 +43,7 @@
       background: none;
       // text-align: center;
       color: var(--text-color);
+
       &:hover {
         cursor: pointer;
         background-color: rgba($color: #000000, $alpha: 0.1);
@@ -53,6 +58,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        label {
+          margin-left: 5px;
+        }
       }
     }
 

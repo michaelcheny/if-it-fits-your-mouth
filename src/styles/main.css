@@ -133,6 +133,10 @@
       grid-template-columns: auto 165px;
 }
 
+.user-form-section form .selection .labels {
+  margin-left: 5px;
+}
+
 .user-form-section form label {
   height: 75px;
   display: -webkit-box;
@@ -201,9 +205,48 @@
           justify-content: center;
 }
 
+.user-form-section form .gender-select .radio-group label {
+  margin-left: 5px;
+}
+
 .user-form-section form .submit-btn {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.08);
+}
+
+.result-container {
+  width: 350px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.result-container .results {
+  width: 200px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.result-container .results div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.nums {
+  font-weight: 900;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.legend {
+  font-size: x-small;
+  margin-top: 2em;
 }
 
 * {

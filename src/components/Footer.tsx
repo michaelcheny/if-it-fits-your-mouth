@@ -6,7 +6,12 @@ const Footer = () => {
       <div>
         <span className="command">esc</span> - Command Line
       </div>
-      <div>Select a calculator</div>
+      <div>
+        <span className="command">tab</span> - Next Selection
+      </div>
+      <div>
+        <span className="command">shift</span> <span className="command">tab</span> - Previous Selection
+      </div>
       <div>
         Built by{" "}
         <a href="https://michaelchen.dev" target="_blank" rel="noopener noreferrer">

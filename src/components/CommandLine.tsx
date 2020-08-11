@@ -26,7 +26,6 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
     e.preventDefault();
     console.log(e.currentTarget.id);
     activateTrapCard(e.currentTarget.id);
-    // activateTrapCard(e.currentTarget.id);
   };
 
   return (
