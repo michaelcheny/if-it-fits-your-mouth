@@ -35,7 +35,7 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
     };
     const bmr = calculateBmr(userAttributes);
     const tdee = calculateTdee(userAttributes, bmr);
-    const results = { bmr, tdee };
+    const results = { bmr, tdee, goal: 0, calGoal: tdee };
     userAttributes = { ...userAttributes, ...results };
     setUser(userAttributes);
     localStorage.setItem("userStats", JSON.stringify(userAttributes));

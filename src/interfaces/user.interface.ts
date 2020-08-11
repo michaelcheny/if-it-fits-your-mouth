@@ -10,4 +10,6 @@ export interface User {
   activity_level: number;
   bmr?: number;
   tdee?: number;
+  goal?: number;
+  calGoal?: number;
 }

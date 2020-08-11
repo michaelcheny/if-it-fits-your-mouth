@@ -222,7 +222,7 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 70px;
+  height: 60px;
   width: 200px;
   -ms-flex-item-align: center;
       align-self: center;
@@ -251,16 +251,16 @@
       -ms-flex-align: center;
           align-items: center;
   height: 130px;
-  margin: 1.5em 0;
+  margin: 2em 0;
 }
 
 .goal input {
-  width: 60%;
+  width: 230px;
   padding: 0.5em 0;
 }
 
 .macro-button {
-  width: 50%;
+  width: 200px;
   -ms-grid-column-align: center;
       justify-self: center;
 }
@@ -280,16 +280,16 @@
 
 .legend {
   font-size: 10px;
-  margin-top: 2em;
+  margin-top: 2.5em;
 }
 
 .legend p {
-  margin: 1em;
+  margin: 0.6em 0;
 }
 
 @media (min-width: 768px) {
   .result-container {
-    width: 450px;
+    width: 480px;
   }
 }
 

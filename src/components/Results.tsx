@@ -4,18 +4,32 @@ import { calculateRecommendedCals } from "../helpers/calculations";
 
 type ResultProps = {
   user: User | any;
+  setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
   setThing: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Results = ({ user, setThing }: ResultProps) => {
+const Results = ({ user, setUser, setThing }: ResultProps) => {
   const [goal, setGoal] = useState<number>(0);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+  const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setGoal(Number(e.target.value));
+    const goals = {
+      goal: Number(e.target.value),
+      calGoal: calculateRecommendedCals(user.tdee, Number(e.target.value)),
+    };
+    const userAttr = {
+      ...user,
+      ...goals,
+    };
+    setUser(userAttr);
   };
 
-  // console.log(user);
+  const handleSubmit = () => {
+    console.log(user);
+    localStorage.setItem("userStats", JSON.stringify(user));
+    setThing("macros");
+  };
+
   return (
     <div className="result-container">
       <div className="results">
@@ -37,7 +51,8 @@ const Results = ({ user, setThing }: ResultProps) => {
       <div className="goal">
         <p>What are your goals?</p>
         <p>
-          {goal < 0 ? "Lose" : "Gain"} <span className="nums">{Math.abs(goal)}</span> pounds a week
+          {goal < 0 ? "Lose" : "Gain"}{" "}
+          <span className="nums">{(user && user.goal) || Math.abs(goal)}</span> pounds a week
         </p>
         <input
           type="range"
@@ -45,16 +60,18 @@ const Results = ({ user, setThing }: ResultProps) => {
           min={-2}
           max={2}
           step={0.5}
-          value={goal}
+          defaultValue={(user && user.goal) || goal}
           onChange={handleChange}
         />
         <div>
           <p>Recommended Calories Per Day</p>
-          <div className="rec-cals">{calculateRecommendedCals(user.tdee, goal)}</div>
+          <div className="rec-cals">
+            {(user && user.calGoal) || calculateRecommendedCals(user.tdee, goal)}
+          </div>
         </div>
       </div>
 
-      <button className="macro-button" onClick={() => setThing("macros")}>
+      <button className="macro-button" onClick={handleSubmit}>
         Calculate Macros
       </button>
       <div className="legend">
@@ -62,6 +79,7 @@ const Results = ({ user, setThing }: ResultProps) => {
           Calorie intake should not fall below 1,200 a day in women or 1,500 a day in men, except under
           the supervision of a health professional.
         </p>
+        <p>It is recommended to exercise more instead of eating less.</p>
         <p>
           Your basal metabolic rate (BMR) is the amount of energy expended while resting in a neutral
           environment.
