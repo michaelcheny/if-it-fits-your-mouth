@@ -73,10 +73,13 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
               Resources
             </div>
             <div tabIndex={0} onKeyDown={handleThemeChange} id="light">
-              Change Theme: Light
+              Change theme: Light
             </div>
             <div tabIndex={0} onKeyDown={handleThemeChange} id="dark">
-              Change Theme: Dark
+              Change theme: Dark
+            </div>
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="monokai">
+              Change theme: Monokai
             </div>
           </div>
         </form>

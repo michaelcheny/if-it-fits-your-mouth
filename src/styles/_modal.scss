@@ -18,7 +18,7 @@
     grid-template-rows: 60px auto;
     overflow: auto;
     width: 400px;
-    height: 200px;
+    height: 250px;
 
     input {
       border: none;
@@ -36,6 +36,7 @@
 
     .selections {
       overflow-y: auto;
+      // padding-bottom: 2em;
 
       div {
         height: 20px;

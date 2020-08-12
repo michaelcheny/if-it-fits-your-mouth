@@ -54,6 +54,10 @@
   background-color: rgba(105, 105, 105, 0.4);
 }
 
+.theme-monokai .command {
+  background-color: rgba(253, 151, 31, 0.3);
+}
+
 .menu-modal {
   z-index: 5;
   position: fixed;
@@ -81,15 +85,19 @@
       grid-template-rows: 60px auto;
   overflow: auto;
   width: 400px;
-  height: 200px;
+  height: 250px;
 }
 
 .theme-light .menu-modal form {
-  background-color: #495057;
+  background-color: #adb5bd;
 }
 
 .theme-dark .menu-modal form {
   background-color: darkslategray;
+}
+
+.theme-monokai .menu-modal form {
+  background-color: #272822;
 }
 
 .menu-modal form input {
@@ -112,6 +120,10 @@
   color: ivory;
 }
 
+.theme-monokai .menu-modal form input {
+  color: #a6e22e;
+}
+
 .menu-modal form .selections {
   overflow-y: auto;
 }
@@ -128,11 +140,15 @@
 }
 
 .theme-light .menu-modal form .selections div:hover {
-  background-color: #adb5bd;
+  background-color: darkslategray;
 }
 
 .theme-dark .menu-modal form .selections div:hover {
   background-color: darkviolet;
+}
+
+.theme-monokai .menu-modal form .selections div:hover {
+  background-color: #f92672;
 }
 
 .menu-modal form .selections div:focus {
@@ -140,11 +156,15 @@
 }
 
 .theme-light .menu-modal form .selections div:focus {
-  background-color: #adb5bd;
+  background-color: darkslategray;
 }
 
 .theme-dark .menu-modal form .selections div:focus {
   background-color: darkviolet;
+}
+
+.theme-monokai .menu-modal form .selections div:focus {
+  background-color: #f92672;
 }
 
 .user-form-section form {
@@ -192,6 +212,10 @@
   color: ivory;
 }
 
+.theme-monokai .user-form-section form input {
+  color: #a6e22e;
+}
+
 .user-form-section form input:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
@@ -213,6 +237,10 @@
 
 .theme-dark .user-form-section form select {
   color: ivory;
+}
+
+.theme-monokai .user-form-section form select {
+  color: #a6e22e;
 }
 
 .user-form-section form select:hover {
@@ -258,6 +286,10 @@
 
 .theme-dark .user-form-section form .submit-btn {
   background-color: rgba(105, 105, 105, 0.4);
+}
+
+.theme-monokai .user-form-section form .submit-btn {
+  background-color: rgba(253, 151, 31, 0.3);
 }
 
 .user-form-section form .submit-btn:hover {
@@ -394,12 +426,20 @@ body {
   background: #323437;
 }
 
+.theme-monokai body {
+  background: #272822;
+}
+
 .theme-light body {
   color: black;
 }
 
 .theme-dark body {
   color: ivory;
+}
+
+.theme-monokai body {
+  color: #a6e22e;
 }
 
 .grid-container {
@@ -445,6 +485,10 @@ body {
   color: ivory;
 }
 
+.theme-monokai a {
+  color: #a6e22e;
+}
+
 button {
   padding: 5px 8px;
   border-radius: 2px;
@@ -461,12 +505,20 @@ button {
   background-color: rgba(105, 105, 105, 0.4);
 }
 
+.theme-monokai button {
+  background-color: rgba(253, 151, 31, 0.3);
+}
+
 .theme-light button {
   color: black;
 }
 
 .theme-dark button {
   color: ivory;
+}
+
+.theme-monokai button {
+  color: #a6e22e;
 }
 
 button:hover {
@@ -479,6 +531,10 @@ button:hover {
 
 .theme-dark button:hover {
   background-color: darkslategray;
+}
+
+.theme-monokai button:hover {
+  background-color: rgba(253, 151, 31, 0.6);
 }
 
 @media (min-width: 768px) {
