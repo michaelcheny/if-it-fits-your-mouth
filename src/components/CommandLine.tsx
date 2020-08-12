@@ -72,16 +72,16 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleKeyPress} id="resources">
               Resources
             </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="light">
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="light" className="selection">
               Change theme: Light
             </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="dark">
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="dark" className="selection">
               Change theme: Dark
             </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="monokai">
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="monokai" className="selection">
               Change theme: Monokai
             </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="dracula">
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="dracula" className="selection">
               Change theme: Dracula
             </div>
           </div>

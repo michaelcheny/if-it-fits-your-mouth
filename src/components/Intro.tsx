@@ -12,6 +12,21 @@ const Intro = ({ setThing }: ChangeAppProps) => {
       <p>
         <button onClick={() => setThing("user-form")}>Start</button>
       </p>
+      <div className="legend">
+        <p>
+          Calorie intake should not fall below 1,200 a day in women or 1,500 a day in men, except under
+          the supervision of a health professional.
+        </p>
+        <p>It is recommended to exercise more instead of eating less.</p>
+        <p>
+          Your basal metabolic rate (BMR) is the amount of energy expended while resting in a neutral
+          environment.
+        </p>
+        <p>
+          Your Total Daily Energy Expenditure (TDEE) is a measure of how many calories you burn per day
+          when activity level is taken into account.
+        </p>
+      </div>
     </div>
   );
 };

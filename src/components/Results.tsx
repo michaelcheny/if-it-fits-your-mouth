@@ -30,22 +30,6 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
 
   return (
     <div className="result-container">
-      <div className="results">
-        <div>
-          <div>BMR</div>
-          <div>
-            <span className="nums">{user.bmr} </span> calories/day
-          </div>
-        </div>
-
-        <div>
-          <div>TDEE</div>
-          <div>
-            <span className="nums">{user.tdee}</span> calories/day
-          </div>
-        </div>
-      </div>
-
       <div className="goal">
         <p>What are your goals?</p>
         <p>
@@ -70,12 +54,28 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
       </div>
 
       <Macros macros={macros} />
+      <div className="results">
+        <div className="title">Other Info</div>
+        <div>
+          <div>BMR</div>
+          <div>
+            <span className="nums">{user.bmr} </span> calories/day
+          </div>
+        </div>
+
+        <div>
+          <div>TDEE</div>
+          <div>
+            <span className="nums">{user.tdee}</span> calories/day
+          </div>
+        </div>
+      </div>
 
       {/* <button className="macro-button" onClick={handleSubmit}>
         Calculate Macros
       </button> */}
 
-      <div className="legend">
+      {/* <div className="legend">
         <p>
           Calorie intake should not fall below 1,200 a day in women or 1,500 a day in men, except under
           the supervision of a health professional.
@@ -89,7 +89,7 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
           Your Total Daily Energy Expenditure (TDEE) is a measure of how many calories you burn per day
           when activity level is taken into account.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

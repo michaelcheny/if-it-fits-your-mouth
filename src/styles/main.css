@@ -2,9 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 .intro-box {
-  border-radius: 2px;
   width: 300px;
-  height: 300px;
+  height: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,6 +14,19 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.intro-box button {
+  padding: 0.5em 1em;
+}
+
+.legend {
+  font-size: 10px;
+  margin-top: 1em;
+}
+
+.legend p {
+  margin: 0.6em 0;
 }
 
 @media (min-width: 768px) {
@@ -329,14 +341,18 @@
 }
 
 .result-container {
+  height: 360px;
   width: 360px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 100px 1fr;
-      grid-template-rows: 100px 1fr;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .result-container .results {
@@ -364,9 +380,37 @@
       grid-template-columns: 1fr 1fr;
 }
 
+.result-container .results .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .macros {
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.macros .macro-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70px auto;
+      grid-template-columns: 70px auto;
 }
 
 .goal {
@@ -383,13 +427,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 130px;
-  margin: 2em 0;
 }
 
 .goal input {
   width: 230px;
-  padding: 0.5em 0;
+  padding: 1em 0;
 }
 
 .nums {
@@ -405,19 +447,24 @@
   padding: 0.5em 0;
 }
 
-.legend {
-  font-size: 10px;
-  margin-top: 2.5em;
-}
-
-.legend p {
-  margin: 0.6em 0;
-}
-
 @media (min-width: 768px) {
   .result-container {
     width: 480px;
   }
+}
+
+.info-container {
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 * {
