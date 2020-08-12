@@ -58,6 +58,10 @@
   background-color: rgba(253, 151, 31, 0.3);
 }
 
+.theme-dracula .command {
+  background-color: rgba(189, 147, 249, 0.3);
+}
+
 .menu-modal {
   z-index: 5;
   position: fixed;
@@ -100,6 +104,10 @@
   background-color: #272822;
 }
 
+.theme-dracula .menu-modal form {
+  background-color: #44475a;
+}
+
 .menu-modal form input {
   border: none;
   outline: none;
@@ -122,6 +130,10 @@
 
 .theme-monokai .menu-modal form input {
   color: #a6e22e;
+}
+
+.theme-dracula .menu-modal form input {
+  color: #f8f8f2;
 }
 
 .menu-modal form .selections {
@@ -151,6 +163,10 @@
   background-color: #f92672;
 }
 
+.theme-dracula .menu-modal form .selections div:hover {
+  background-color: #6272a4;
+}
+
 .menu-modal form .selections div:focus {
   outline: none;
 }
@@ -165,6 +181,10 @@
 
 .theme-monokai .menu-modal form .selections div:focus {
   background-color: #f92672;
+}
+
+.theme-dracula .menu-modal form .selections div:focus {
+  background-color: #6272a4;
 }
 
 .user-form-section form {
@@ -216,6 +236,10 @@
   color: #a6e22e;
 }
 
+.theme-dracula .user-form-section form input {
+  color: #f8f8f2;
+}
+
 .user-form-section form input:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
@@ -241,6 +265,10 @@
 
 .theme-monokai .user-form-section form select {
   color: #a6e22e;
+}
+
+.theme-dracula .user-form-section form select {
+  color: #f8f8f2;
 }
 
 .user-form-section form select:hover {
@@ -290,6 +318,10 @@
 
 .theme-monokai .user-form-section form .submit-btn {
   background-color: rgba(253, 151, 31, 0.3);
+}
+
+.theme-dracula .user-form-section form .submit-btn {
+  background-color: rgba(189, 147, 249, 0.3);
 }
 
 .user-form-section form .submit-btn:hover {
@@ -430,6 +462,10 @@ body {
   background: #272822;
 }
 
+.theme-dracula body {
+  background: #282a36;
+}
+
 .theme-light body {
   color: black;
 }
@@ -440,6 +476,10 @@ body {
 
 .theme-monokai body {
   color: #a6e22e;
+}
+
+.theme-dracula body {
+  color: #f8f8f2;
 }
 
 .grid-container {
@@ -489,6 +529,10 @@ body {
   color: #a6e22e;
 }
 
+.theme-dracula a {
+  color: #f8f8f2;
+}
+
 button {
   padding: 5px 8px;
   border-radius: 2px;
@@ -509,6 +553,10 @@ button {
   background-color: rgba(253, 151, 31, 0.3);
 }
 
+.theme-dracula button {
+  background-color: rgba(189, 147, 249, 0.3);
+}
+
 .theme-light button {
   color: black;
 }
@@ -519,6 +567,10 @@ button {
 
 .theme-monokai button {
   color: #a6e22e;
+}
+
+.theme-dracula button {
+  color: #f8f8f2;
 }
 
 button:hover {
@@ -535,6 +587,10 @@ button:hover {
 
 .theme-monokai button:hover {
   background-color: rgba(253, 151, 31, 0.6);
+}
+
+.theme-dracula button:hover {
+  background-color: rgba(255, 121, 198, 0.6);
 }
 
 @media (min-width: 768px) {

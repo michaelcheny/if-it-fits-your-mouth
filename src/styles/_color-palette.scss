@@ -39,4 +39,20 @@ $themes: (
         $alpha: 0.3,
       ),
   ),
+  dracula: (
+    color-background: #282a36,
+    color-text: #f8f8f2,
+    btn-hover:
+      rgba(
+        $color: #ff79c6,
+        $alpha: 0.6,
+      ),
+    cmd-bg: #44475a,
+    cmd-hover: #6272a4,
+    btn:
+      rgba(
+        $color: #bd93f9,
+        $alpha: 0.3,
+      ),
+  ),
 );

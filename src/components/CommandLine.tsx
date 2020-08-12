@@ -81,6 +81,9 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleThemeChange} id="monokai">
               Change theme: Monokai
             </div>
+            <div tabIndex={0} onKeyDown={handleThemeChange} id="dracula">
+              Change theme: Dracula
+            </div>
           </div>
         </form>
       </div>
