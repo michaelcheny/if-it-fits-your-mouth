@@ -43,9 +43,9 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
 
   return (
     <div className="user-form-section">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
         {/* GENDER */}
-        <div className="selection">
+        <div className="user-selection">
           <label id="gender">Gender</label>
           <div className="gender-select">
             <div className="radio-group">
@@ -73,7 +73,7 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
           </div>
         </div>
         {/* AGE */}
-        <div className="selection">
+        <div className="user-selection">
           <label id="age">Age</label>
           <input
             type="number"
@@ -84,7 +84,7 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
           />
         </div>
         {/* HEIGHT */}
-        <div className="selection">
+        <div className="user-selection">
           <label id="height">Height</label>
           <div style={{ display: "flex", justifyContent: "space-evenly" }}>
             <div style={{ display: "inline-flex" }}>
@@ -136,7 +136,7 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
           </div>
         </div>
         {/* WEIGHT */}
-        <div className="selection">
+        <div className="user-selection">
           <label id="weight">Weight</label>
           <input
             type="number"
@@ -146,7 +146,7 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
           />
         </div>
         {/* ACTIVITY LEVEL */}
-        <div className="selection">
+        <div className="user-selection">
           <label id="activity_level">Activity Level</label>
           <select
             name="activity_level"

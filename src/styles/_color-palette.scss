@@ -55,4 +55,20 @@ $themes: (
         $alpha: 0.3,
       ),
   ),
+  soft-tone: (
+    color-background: #c5d5cb,
+    color-text: rgb(95, 95, 95),
+    btn-hover:
+      rgba(
+        $color: #e3e0cf,
+        $alpha: 0.6,
+      ),
+    cmd-bg: #9fa8a3,
+    cmd-hover: #e3e0cf,
+    btn:
+      rgba(
+        $color: #9fa8a3,
+        $alpha: 0.7,
+      ),
+  ),
 );

@@ -39,6 +39,7 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
         <input
           type="range"
           name="goal"
+          className="slider"
           min={-2}
           max={2}
           step={0.5}
