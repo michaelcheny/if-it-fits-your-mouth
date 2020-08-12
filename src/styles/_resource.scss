@@ -1,6 +1,21 @@
-.info-container {
-  height: 500px;
+.resource-container {
+  height: 80%;
+  width: 360px;
   // border: 1px red solid;
+  h1 {
+    padding: 0.75em 0;
+  }
+
+  .sub-title {
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 0.5em;
+    padding-bottom: 0.25em;
+  }
+}
+
+.info-container {
+  // height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -13,4 +28,10 @@
 
 .per-gram {
   float: right;
+}
+
+@media (min-width: 768px) {
+  .resource-container {
+    width: 500px;
+  }
 }
