@@ -33,6 +33,19 @@ body {
   @include theme-aware("color", "color-text");
 }
 
+ul {
+  list-style: none;
+  li {
+    margin-left: 1em;
+  }
+  li::before {
+    content: "⌁ ";
+    font-size: 14px;
+    margin-bottom: 2px;
+    // color: ${({ theme }) => theme.accent};
+  }
+}
+
 .grid-container {
   // border: 1px black solid;
   height: 100vh;

@@ -1,6 +1,16 @@
 .info-container {
   height: 500px;
+  // border: 1px red solid;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.tiny-text {
+  font-size: 10px;
+  // float: right;
+}
+
+.per-gram {
+  float: right;
 }

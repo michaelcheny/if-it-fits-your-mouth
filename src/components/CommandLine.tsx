@@ -69,7 +69,7 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleKeyPress} className="selection" id="result">
               Results
             </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress} id="resources">
+            <div tabIndex={0} onKeyDown={handleKeyPress} id="resources" className="selection">
               Resources
             </div>
             <div tabIndex={0} onKeyDown={handleThemeChange} id="light" className="selection">
