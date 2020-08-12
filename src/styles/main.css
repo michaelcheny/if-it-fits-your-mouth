@@ -466,7 +466,7 @@
 .resource-container .sub-title {
   font-size: 17px;
   font-weight: bold;
-  padding-top: 0.5em;
+  padding-top: 0.3em;
   padding-bottom: 0.25em;
 }
 
@@ -491,9 +491,13 @@
   float: right;
 }
 
+.description {
+  padding-left: 1em;
+}
+
 @media (min-width: 768px) {
   .resource-container {
-    width: 500px;
+    width: 520px;
   }
 }
 
