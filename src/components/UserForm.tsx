@@ -156,8 +156,8 @@ const UserForm = ({ user, setUser, setThing }: UserFormProps) => {
             ref={register({ required: true })}
           >
             <option value="1">Little to no exercise</option>
-            <option value="2">Lightly active (1-3x week)</option>
-            <option value="3">Moderdately active (3-5x week)</option>
+            <option value="2">Lightly active (exercise 1-3x week)</option>
+            <option value="3">Moderdately active (exercise 3-5x week)</option>
             <option value="4">Very Active (hard exercise 6-7x week)</option>
             <option value="5">Super Active (very physical job or professional athelete)</option>
           </select>

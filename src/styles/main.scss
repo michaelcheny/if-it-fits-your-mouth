@@ -42,14 +42,11 @@ ul {
     content: "⌁ ";
     font-size: 14px;
     margin-bottom: 2px;
-    // color: ${({ theme }) => theme.accent};
   }
 }
 
 .grid-container {
-  // border: 1px black solid;
   height: 100vh;
-  // max-width: 1200px;
   display: grid;
   grid-template-rows: 80px auto 120px;
   justify-content: space-evenly;
@@ -62,22 +59,10 @@ ul {
 }
 
 .main-content {
-  // border: 1px red solid;
   display: flex;
   justify-content: center;
   align-items: center;
-  // height: 100vh;
-  // padding: 5em;
-  // place-items: center;
-  // width: 900px;
-  // line-height: 20px;
-
-  // justify-content: center;
 }
-
-// h1 {
-//   font-family: var(--font-header);
-// }
 
 a {
   @include theme-aware("color", "color-text");
@@ -88,7 +73,6 @@ button {
   @include theme-aware("color", "color-text");
   padding: 5px 8px;
   border-radius: 2px;
-  margin: 0 1em;
   outline: none;
   border: none;
   &:hover {
@@ -101,7 +85,7 @@ button {
   --webkit-appearance: none;
   appearance: none;
   outline: none;
-  @include theme-aware("background", "cmd-bg");
+  @include theme-aware("background", "btn");
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;

@@ -11,8 +11,7 @@
   background: rgba(0, 0, 0, 0.5);
 
   form {
-    // background-color: darkslategray;
-    @include theme-aware("background-color", "cmd-bg");
+    @include theme-aware("background-color", "color-background");
     border-radius: 0.25em;
     display: grid;
     grid-template-rows: 60px auto;
@@ -30,13 +29,11 @@
       font-size: 18px;
       font-family: var(--font-header);
       font-size: medium;
-      // color: var(--text-color);
       @include theme-aware("color", "color-text");
     }
 
     .selections {
       overflow-y: auto;
-      // padding-bottom: 2em;
 
       div {
         height: 20px;
@@ -46,19 +43,14 @@
 
         &:hover {
           cursor: pointer;
-          // background-color: darkviolet;
           @include theme-aware("background-color", "cmd-hover");
         }
 
         &:focus {
-          // background: darkviolet;
           @include theme-aware("background-color", "cmd-hover");
           outline: none;
         }
       }
-      // div:focus {
-      //   background-color: darkviolet;
-      // }
     }
   }
 }

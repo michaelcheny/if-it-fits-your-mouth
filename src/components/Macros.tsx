@@ -11,7 +11,7 @@ type MacrosProp = {
 const Macros = ({ macros }: MacrosProp) => {
   return (
     <div className="macros">
-      <div>Recommended Macros Per Day (grams)</div>
+      <div className="title">Recommended Macros Per Day (grams)</div>
       <div>
         <div className="macro-grid">
           Fats: <span className="nums">{macros.fats}</span>

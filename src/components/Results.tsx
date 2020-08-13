@@ -31,7 +31,7 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
   return (
     <div className="result-container">
       <div className="goal">
-        <p>What are your goals?</p>
+        <div className="title">What are your goals?</div>
         <p>
           {goal < 0 ? "Lose" : "Gain"}{" "}
           <span className="nums">{(user && user.goal) || Math.abs(goal)}</span> pounds a week
@@ -47,7 +47,7 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
           onChange={handleChange}
         />
         <div>
-          <p>Recommended Calories Per Day</p>
+          <div className="title">Recommended Calories Per Day</div>
           <div className="rec-cals">
             {(user && user.calGoal) || calculateRecommendedCals(user.tdee, goal)}
           </div>
@@ -56,7 +56,7 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
 
       <Macros macros={macros} />
       <div className="results">
-        <div className="title">Other Info</div>
+        <p className="title">Other Info</p>
         <div>
           <div>BMR</div>
           <div>
@@ -72,25 +72,12 @@ const Results = ({ user, setUser, setThing }: ResultProps) => {
         </div>
       </div>
 
-      {/* <button className="macro-button" onClick={handleSubmit}>
-        Calculate Macros
-      </button> */}
-
-      {/* <div className="legend">
-        <p>
-          Calorie intake should not fall below 1,200 a day in women or 1,500 a day in men, except under
-          the supervision of a health professional.
-        </p>
-        <p>It is recommended to exercise more instead of eating less.</p>
-        <p>
-          Your basal metabolic rate (BMR) is the amount of energy expended while resting in a neutral
-          environment.
-        </p>
-        <p>
-          Your Total Daily Energy Expenditure (TDEE) is a measure of how many calories you burn per day
-          when activity level is taken into account.
-        </p>
-      </div> */}
+      <div className="legend">
+        <p>Current formula for calculating macros:</p>
+        <p>0.8g - 1.2g of protein per pound of body weight.</p>
+        <p>0.3g - 0.6g of fats per pound of body weight.</p>
+        <p>Custom macronutrient ratios coming soon!</p>
+      </div>
     </div>
   );
 };

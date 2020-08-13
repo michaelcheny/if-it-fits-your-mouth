@@ -2,73 +2,72 @@ $themes: (
   light: (
     color-background: #fffff0,
     color-text: black,
-    btn-hover: darkslategray,
-    cmd-bg: #adb5bd,
-    cmd-hover: darkslategray,
     btn:
       rgba(
         $color: #495057,
         $alpha: 0.4,
       ),
+    btm-hover:
+      rgba(
+        $color: darkslategray,
+        $alpha: 0.6,
+      ),
+    cmd-hover: rgb(91, 139, 139),
   ),
   dark: (
     color-background: #323437,
     color-text: ivory,
-    btn-hover: darkslategray,
-    cmd-bg: darkslategray,
-    cmd-hover: darkviolet,
     btn:
       rgba(
         $color: dimgrey,
         $alpha: 0.4,
       ),
+    btn-hover: darkslategray,
+    cmd-hover: darkviolet,
   ),
   monokai: (
     color-background: #272822,
     color-text: #a6e22e,
-    btn-hover:
-      rgba(
-        $color: #fd971f,
-        $alpha: 0.6,
-      ),
-    cmd-bg: #272822,
-    cmd-hover: #f92672,
     btn:
       rgba(
         $color: #fd971f,
         $alpha: 0.3,
       ),
+    btn-hover:
+      rgba(
+        $color: #66d9ef,
+        $alpha: 0.6,
+      ),
+    cmd-hover: #f92672,
   ),
   dracula: (
     color-background: #282a36,
     color-text: #f8f8f2,
-    btn-hover:
-      rgba(
-        $color: #ff79c6,
-        $alpha: 0.6,
-      ),
-    cmd-bg: #44475a,
-    cmd-hover: #6272a4,
     btn:
       rgba(
         $color: #bd93f9,
         $alpha: 0.3,
       ),
+    btn-hover:
+      rgba(
+        $color: #ff79c6,
+        $alpha: 0.6,
+      ),
+    cmd-hover: #6272a4,
   ),
   soft-tone: (
     color-background: #c5d5cb,
     color-text: rgb(95, 95, 95),
-    btn-hover:
-      rgba(
-        $color: #e3e0cf,
-        $alpha: 0.6,
-      ),
-    cmd-bg: #9fa8a3,
-    cmd-hover: #e3e0cf,
     btn:
       rgba(
         $color: #9fa8a3,
         $alpha: 0.7,
       ),
+    btn-hover:
+      rgba(
+        $color: #e3e0cf,
+        $alpha: 0.6,
+      ),
+    cmd-hover: #a8a79a,
   ),
 );
