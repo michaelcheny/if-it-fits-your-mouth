@@ -9,7 +9,7 @@ type ResultProps = {
   setThing: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Results = ({ user, setUser, setThing }: ResultProps) => {
+const Results = ({ user, setUser }: ResultProps) => {
   const [goal, setGoal] = useState<number>(0);
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {

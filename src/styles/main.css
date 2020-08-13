@@ -282,20 +282,24 @@
   cursor: pointer;
 }
 
+.theme-light .user-form-section .user-form input:hover {
+  background-color: #fffff0;
+}
+
 .theme-dark .user-form-section .user-form input:hover {
-  background-color: darkslategray;
+  background-color: #323437;
 }
 
 .theme-monokai .user-form-section .user-form input:hover {
-  background-color: rgba(102, 217, 239, 0.3);
+  background-color: #272822;
 }
 
 .theme-dracula .user-form-section .user-form input:hover {
-  background-color: rgba(255, 121, 198, 0.6);
+  background-color: #282a36;
 }
 
 .theme-soft-tone .user-form-section .user-form input:hover {
-  background-color: rgba(177, 174, 162, 0.6);
+  background-color: #c5d5cb;
 }
 
 .user-form-section .user-form input:focus {
@@ -310,6 +314,11 @@
   border: none;
   outline: none;
   background: none;
+  overflow: hidden;
+  padding: 5px 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .theme-light .user-form-section .user-form select {
@@ -336,20 +345,24 @@
   cursor: pointer;
 }
 
+.theme-light .user-form-section .user-form select:hover {
+  background-color: #fffff0;
+}
+
 .theme-dark .user-form-section .user-form select:hover {
-  background-color: darkslategray;
+  background-color: #323437;
 }
 
 .theme-monokai .user-form-section .user-form select:hover {
-  background-color: rgba(102, 217, 239, 0.3);
+  background-color: #272822;
 }
 
 .theme-dracula .user-form-section .user-form select:hover {
-  background-color: rgba(255, 121, 198, 0.6);
+  background-color: #282a36;
 }
 
 .theme-soft-tone .user-form-section .user-form select:hover {
-  background-color: rgba(177, 174, 162, 0.6);
+  background-color: #c5d5cb;
 }
 
 .user-form-section .user-form select:focus {
@@ -410,6 +423,10 @@
 
 .user-form-section .user-form .submit-btn:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.user-form-section .user-form .submit-btn:focus {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 @media (min-height: 768px) {
