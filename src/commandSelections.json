@@ -1,0 +1,47 @@
+[
+  {
+    "id": "intro",
+    "text": "Landing Page",
+    "cb": "page"
+  },
+  {
+    "id": "user-form",
+    "text": "Edit User Stats",
+    "cb": "page"
+  },
+  {
+    "id": "result",
+    "text": "Results",
+    "cb": "page"
+  },
+  {
+    "id": "resources",
+    "text": "Resources",
+    "cb": "page"
+  },
+  {
+    "id": "light",
+    "text": "Change theme: Light",
+    "cb": "theme"
+  },
+  {
+    "id": "dark",
+    "text": "Change theme: Dark",
+    "cb": "theme"
+  },
+  {
+    "id": "monokai",
+    "text": "Change theme: Monokai",
+    "cb": "theme"
+  },
+  {
+    "id": "dracula",
+    "text": "Change theme: Dracula",
+    "cb": "theme"
+  },
+  {
+    "id": "soft-tone",
+    "text": "Change theme: Soft Tone",
+    "cb": "theme"
+  }
+]

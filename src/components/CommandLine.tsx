@@ -3,6 +3,7 @@ import { useClickOutside } from "../hooks/useClickOutside";
 import FocusTrap from "focus-trap-react";
 import { setTheme } from "../helpers/themeChange";
 import CommandSelection from "./CommandSelection";
+import commands from "../commandSelections.json";
 
 type MenuProps = {
   showMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -62,34 +63,14 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             tabIndex={0}
           />
           <div className="selections">
-            <div tabIndex={0} onKeyDown={handleKeyPress} className="selection" id="intro">
-              Return to Main Menu
-            </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress} className="selection" id="user-form">
-              Edit User Stats
-            </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress} className="selection" id="result">
-              Results
-            </div>
-            <div tabIndex={0} onKeyDown={handleKeyPress} id="resources" className="selection">
-              Resources
-            </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="light" className="selection">
-              Change theme: Light
-            </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="dark" className="selection">
-              Change theme: Dark
-            </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="monokai" className="selection">
-              Change theme: Monokai
-            </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="dracula" className="selection">
-              Change theme: Dracula
-            </div>
-            <div tabIndex={0} onKeyDown={handleThemeChange} id="soft-tone" className="selection">
-              Change theme: Soft Tone
-            </div>
-            <CommandSelection cb={handleKeyPress} text={"chocolate rain"} id={"chocolate"} />
+            {commands.map((command) => (
+              <CommandSelection
+                key={command.id}
+                id={command.id}
+                cb={command.cb === "page" ? handleKeyPress : handleThemeChange}
+                text={command.text}
+              />
+            ))}
           </div>
         </form>
       </div>
