@@ -2,6 +2,7 @@ import React, { useRef, useLayoutEffect, useState } from "react";
 import { useClickOutside } from "../hooks/useClickOutside";
 import FocusTrap from "focus-trap-react";
 import { setTheme } from "../helpers/themeChange";
+import CommandSelection from "./CommandSelection";
 
 type MenuProps = {
   showMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -88,6 +89,7 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
             <div tabIndex={0} onKeyDown={handleThemeChange} id="soft-tone" className="selection">
               Change theme: Soft Tone
             </div>
+            <CommandSelection cb={handleKeyPress} text={"chocolate rain"} id={"chocolate"} />
           </div>
         </form>
       </div>
