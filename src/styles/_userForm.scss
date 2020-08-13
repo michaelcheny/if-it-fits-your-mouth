@@ -31,6 +31,9 @@
         // background-color: rgba($color: #000000, $alpha: 0.1);
         @include theme-aware("background-color", "btn-hover");
       }
+      &:focus {
+        background: rgba($color: #000000, $alpha: 0.1);
+      }
     }
 
     select {
@@ -43,6 +46,9 @@
       &:hover {
         cursor: pointer;
         @include theme-aware("background-color", "btn-hover");
+      }
+      &:focus {
+        background: rgba($color: #000000, $alpha: 0.1);
       }
     }
 

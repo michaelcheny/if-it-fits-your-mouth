@@ -50,7 +50,7 @@ ul {
 .grid-container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 80px auto 120px;
+  grid-template-rows: 80px auto 160px;
   justify-content: space-evenly;
 }
 
@@ -64,10 +64,15 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 80px;
 }
 
 a {
   @include theme-aware("color", "color-text");
+  outline: none;
+  &:focus {
+    background: rgba($color: #000000, $alpha: 0.1);
+  }
 }
 
 button {
@@ -80,6 +85,9 @@ button {
   &:hover {
     @include theme-aware("background-color", "btn-hover");
     cursor: pointer;
+  }
+  &:focus {
+    background: rgba($color: #000000, $alpha: 0.1);
   }
 }
 
