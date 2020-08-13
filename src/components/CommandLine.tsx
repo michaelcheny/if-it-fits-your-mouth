@@ -32,6 +32,7 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
     e.preventDefault();
     document.documentElement.className = "";
     document.documentElement.classList.add(`theme-${e.currentTarget.id}`);
+    localStorage.setItem("iifym-theme", `theme-${e.currentTarget.id}`);
     showMenu(false);
   };
 

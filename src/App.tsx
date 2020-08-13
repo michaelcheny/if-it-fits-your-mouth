@@ -20,6 +20,11 @@ const App = () => {
 
     const userObj = localStorage.getItem("userStats");
     setUser(userObj !== null ? JSON.parse(userObj) : undefined);
+    const theme = localStorage.getItem("iifym-theme");
+    if (theme !== null) {
+      document.documentElement.className = "";
+      document.documentElement.classList.add(theme);
+    }
   }, []);
 
   const renderMain = () => {
