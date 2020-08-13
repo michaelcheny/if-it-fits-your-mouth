@@ -18,7 +18,7 @@
 }
 
 .intro-box button {
-  padding: 0.5em 1em;
+  padding: 0.66em;
 }
 
 .legend {
@@ -30,7 +30,7 @@
 }
 
 .legend p {
-  margin: 0.6em 0;
+  margin: 0.4em 0;
 }
 
 @media (min-width: 768px) {
@@ -282,7 +282,22 @@
 
 .user-form-section .user-form input:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .user-form-section .user-form input:hover {
+  background-color: darkslategray;
+}
+
+.theme-monokai .user-form-section .user-form input:hover {
+  background-color: rgba(102, 217, 239, 0.3);
+}
+
+.theme-dracula .user-form-section .user-form input:hover {
+  background-color: rgba(255, 121, 198, 0.6);
+}
+
+.theme-soft-tone .user-form-section .user-form input:hover {
+  background-color: rgba(227, 224, 207, 0.6);
 }
 
 .user-form-section .user-form select {
@@ -317,7 +332,22 @@
 
 .user-form-section .user-form select:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .user-form-section .user-form select:hover {
+  background-color: darkslategray;
+}
+
+.theme-monokai .user-form-section .user-form select:hover {
+  background-color: rgba(102, 217, 239, 0.3);
+}
+
+.theme-dracula .user-form-section .user-form select:hover {
+  background-color: rgba(255, 121, 198, 0.6);
+}
+
+.theme-soft-tone .user-form-section .user-form select:hover {
+  background-color: rgba(227, 224, 207, 0.6);
 }
 
 .user-form-section .user-form .gender-select {
@@ -376,6 +406,16 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+@media (min-height: 768px) {
+  .user-form-section .user-form {
+    width: 370px;
+  }
+  .user-form-section .user-form .user-selection {
+    -ms-grid-columns: auto 225px;
+        grid-template-columns: auto 225px;
+  }
+}
+
 .result-container {
   height: 360px;
   width: 360px;
@@ -423,7 +463,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: var(--font-header);
+  margin-bottom: 0.5em;
 }
 
 .macros {
@@ -494,15 +534,16 @@
   width: 360px;
 }
 
-.resource-container h1 {
+.resource-container h2 {
   padding: 0.7em 0;
 }
 
-.resource-container .sub-title {
-  font-size: 17px;
+.sub-title {
+  font-size: 16px;
   font-weight: bold;
   padding-top: 0.3em;
   padding-bottom: 0.25em;
+  font-family: var(--font-header);
 }
 
 .info-container {
@@ -527,7 +568,7 @@
 }
 
 .description {
-  padding-left: 1em;
+  padding-left: 0.75em;
 }
 
 @media (min-width: 768px) {
@@ -731,7 +772,7 @@ button:hover {
 }
 
 .theme-monokai button:hover {
-  background-color: rgba(102, 217, 239, 0.6);
+  background-color: rgba(102, 217, 239, 0.3);
 }
 
 .theme-dracula button:hover {
@@ -812,7 +853,7 @@ button:hover {
 }
 
 .theme-monokai .slider::-webkit-slider-thumb:hover {
-  background: rgba(102, 217, 239, 0.6);
+  background: rgba(102, 217, 239, 0.3);
 }
 
 .theme-dracula .slider::-webkit-slider-thumb:hover {
@@ -855,7 +896,7 @@ button:hover {
 }
 
 .theme-monokai .slider::-moz-range-thumb:hover {
-  background: rgba(102, 217, 239, 0.6);
+  background: rgba(102, 217, 239, 0.3);
 }
 
 .theme-dracula .slider::-moz-range-thumb:hover {

@@ -4,8 +4,11 @@ import { ChangeAppProps } from "../interfaces/appstate.interface";
 const Intro = ({ setThing }: ChangeAppProps) => {
   return (
     <div className="intro-box">
-      <h3>Eat what you want.</h3>
-      <p>If It Fits Your Mouth is a macronutrients calculator for flexible dieting. </p>
+      <h2>Eat what you want.</h2>
+      <p>
+        <span className="sub-title">If It Fits Your Mouth</span> is a macronutrients calculator for
+        flexible dieting.{" "}
+      </p>
       <p>This app uses the Mifflin St. Jeor equation to calculate the BMR </p>
       {/* <p> */}
       <button onClick={() => setThing("user-form")}>Start</button>

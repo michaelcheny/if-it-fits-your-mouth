@@ -28,7 +28,8 @@
       @include theme-aware("color", "color-text");
       &:hover {
         cursor: pointer;
-        background-color: rgba($color: #000000, $alpha: 0.1);
+        // background-color: rgba($color: #000000, $alpha: 0.1);
+        @include theme-aware("background-color", "btn-hover");
       }
     }
 
@@ -41,7 +42,7 @@
       @include theme-aware("color", "color-text");
       &:hover {
         cursor: pointer;
-        background-color: rgba($color: #000000, $alpha: 0.1);
+        @include theme-aware("background-color", "btn-hover");
       }
     }
 
@@ -65,6 +66,17 @@
       @include theme-aware("background-color", "btn");
       &:hover {
         background-color: rgba($color: #000000, $alpha: 0.1);
+      }
+    }
+  }
+}
+
+@media (min-height: 768px) {
+  .user-form-section {
+    .user-form {
+      width: 370px;
+      .user-selection {
+        grid-template-columns: auto 225px;
       }
     }
   }
