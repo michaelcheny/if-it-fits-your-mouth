@@ -1,6 +1,7 @@
 import React, { useRef, useLayoutEffect, useState } from "react";
 import { useClickOutside } from "../hooks/useClickOutside";
 import FocusTrap from "focus-trap-react";
+import { setTheme } from "../helpers/themeChange";
 
 type MenuProps = {
   showMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -30,8 +31,7 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
   const handleThemeChange = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key !== "Enter") return;
     e.preventDefault();
-    document.documentElement.className = "";
-    document.documentElement.classList.add(`theme-${e.currentTarget.id}`);
+    setTheme(`theme-${e.currentTarget.id}`);
     localStorage.setItem("iifym-theme", `theme-${e.currentTarget.id}`);
     showMenu(false);
   };

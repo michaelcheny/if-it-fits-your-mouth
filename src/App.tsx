@@ -7,6 +7,7 @@ import Results from "./components/Results";
 import UserForm from "./components/UserForm";
 import { User } from "./interfaces/user.interface";
 import "./styles/main.css";
+import { setTheme } from "./helpers/themeChange";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -22,8 +23,7 @@ const App = () => {
     setUser(userObj !== null ? JSON.parse(userObj) : undefined);
     const theme = localStorage.getItem("iifym-theme");
     if (theme !== null) {
-      document.documentElement.className = "";
-      document.documentElement.classList.add(theme);
+      setTheme(theme);
     }
   }, []);
 
