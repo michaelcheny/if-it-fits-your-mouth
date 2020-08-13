@@ -3,7 +3,7 @@ import { useClickOutside } from "../hooks/useClickOutside";
 import FocusTrap from "focus-trap-react";
 import { setTheme } from "../helpers/themeChange";
 import CommandSelection from "./CommandSelection";
-import commands from "../commandSelections.json";
+import commands from "../data/commandSelections.json";
 
 type MenuProps = {
   showMenu: React.Dispatch<React.SetStateAction<boolean>>;

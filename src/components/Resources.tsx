@@ -1,4 +1,5 @@
 import React from "react";
+import links from "../data/links.json";
 
 const Resources = () => {
   return (
@@ -75,38 +76,13 @@ const Resources = () => {
       </div>
       <h2>Other Resources</h2>
       <ul>
-        <li>
-          <a href="https://barbend.com/iifym-diet-guide/" target="_blant" rel="noopener noreferrer">
-            IIFYM Diet Guide by Barbend
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.healthline.com/nutrition/flexible-dieting"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Flexible Dieting Article by Healhline
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.livestrong.com/article/111962-diet-plan-lose-pounds-weight/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Weighing Food
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.webmd.com/men/features/benefits-protein#1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Benefits of Protein
-          </a>
-        </li>
+        {links.map((link, idx) => (
+          <li>
+            <a key={idx} href={link.url} target="_blant" rel="noopener noreferrer">
+              {link.text}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );
