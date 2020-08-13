@@ -40,7 +40,7 @@
 }
 
 #footer {
-  margin-top: 1em;
+  margin-top: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -531,7 +531,7 @@
 }
 
 .resource-container {
-  width: 360px;
+  width: 345px;
 }
 
 .resource-container h2 {
@@ -573,7 +573,7 @@
 
 @media (min-width: 768px) {
   .resource-container {
-    width: 520px;
+    width: 550px;
   }
 }
 
@@ -649,6 +649,10 @@ body {
 
 ul {
   list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
 ul li {

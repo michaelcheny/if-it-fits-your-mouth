@@ -10,7 +10,7 @@ const Resources = () => {
           <div className="sub-title">
             Fats
             <span className="per-gram">
-              <span className="tiny-text">kcal/gram:</span> 9{" "}
+              <span className="tiny-text">kcal/gram:</span> 9
             </span>
           </div>
 
@@ -19,9 +19,12 @@ const Resources = () => {
             and help maintain body temperature. Helps with hormone production and nutrient absorbtion.
           </div>
           <ul>
-            <li>Hormone production</li>
-            <li>Nutrient absorbtion</li>
-            <li>Body temp maintencance</li>
+            <li>Fatty meats</li>
+            <li>Seeds & Nuts</li>
+            <li>Avocados</li>
+            <li>Fish</li>
+            <li>Oils</li>
+            <li>Most junk food</li>
           </ul>
         </div>
         <div>
@@ -36,9 +39,11 @@ const Resources = () => {
             muscles, cartilage, skin, and blood.
           </div>
           <ul>
-            <li>Cell signaling</li>
-            <li>Building of tissues</li>
-            <li>Hormones and enzymes</li>
+            <li>Meats</li>
+            <li>Milk, Cheese, and Yogurt</li>
+            <li>Fish</li>
+            <li>Protein powder</li>
+            <li>Beans</li>
           </ul>
         </div>
         <div>
@@ -53,8 +58,9 @@ const Resources = () => {
             muscles, and central nervous system. Fiber helps you poop.
           </div>
           <ul>
-            <li>Immediate energy and fuel for the body</li>
-            <li>Balance our blood sugar</li>
+            <li>Veggies & Fruits</li>
+            <li>Grains, Bread, and Pastas</li>
+            <li>Most junk food</li>
           </ul>
         </div>
       </div>
@@ -77,8 +83,8 @@ const Resources = () => {
       <h2>Other Resources</h2>
       <ul>
         {links.map((link, idx) => (
-          <li>
-            <a key={idx} href={link.url} target="_blant" rel="noopener noreferrer">
+          <li key={idx}>
+            <a href={link.url} target="_blant" rel="noopener noreferrer">
               {link.text}
             </a>
           </li>

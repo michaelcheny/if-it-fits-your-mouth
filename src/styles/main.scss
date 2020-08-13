@@ -35,6 +35,8 @@ body {
 
 ul {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   li {
     margin-left: 1em;
   }
