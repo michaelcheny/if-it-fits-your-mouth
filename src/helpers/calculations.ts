@@ -30,7 +30,7 @@ export const calculateTdee = (user: User, bmr: number) => {
   return Math.round(bmr * multiplier);
 };
 
-export const calculateRecommendedCals = (tdee: number, goal: number) => {
+export const calculateRecommendedCals = (tdee: number, goal: number): number => {
   let multiplier = 1;
   if (goal === -2) multiplier = 0.6;
   if (goal === -1.5) multiplier = 0.7;
@@ -45,7 +45,11 @@ export const calculateRecommendedCals = (tdee: number, goal: number) => {
   return Math.round(tdee * multiplier);
 };
 
-export const calculateMacros = (calGoal: number, weight: number, goal: number) => {
+export const calculateMacros = (
+  calGoal: number,
+  weight: number,
+  goal: number
+): { fats: number; protein: number; carbs: number } => {
   let p: number = 0;
   let f: number = 0;
   let c: number = 0;

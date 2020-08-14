@@ -67,7 +67,7 @@ const Resources = () => {
       <h2>Whats a Calorie</h2>
       <div className="description">
         A calorie (kcal) is a unit of energy. Every cell in our body requires energy to function in it's
-        optimal state.
+        optimal state. Weightloss comes down to calories in vs calories out.
       </div>
       <h2>Why Flexible Dieting? (IIFYM)</h2>
       <div className="description">

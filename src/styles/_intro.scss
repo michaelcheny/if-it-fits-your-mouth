@@ -1,11 +1,32 @@
 .intro-box {
   width: 300px;
-  height: 400px;
+  // height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   button {
     padding: 0.66em;
+  }
+}
+.start-btn {
+  background: url("../assets/images/donut.png");
+  height: 80px;
+  width: 80px;
+  margin-top: 1.6em;
+  background-size: cover;
+  align-self: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // font-weight: bolder;
+  // font-size: large;
+  // color: white;
+  transition: 150ms linear;
+  &:hover {
+    cursor: pointer;
+    // font-size: x-large;
+    height: 85px;
+    width: 90px;
   }
 }
 

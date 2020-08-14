@@ -9,9 +9,12 @@ const Intro = ({ setThing }: ChangeAppProps) => {
         <span className="sub-title">If It Fits Your Mouth</span> is a macronutrients calculator for
         flexible dieting.{" "}
       </p>
-      <p>This app uses the Mifflin St. Jeor equation to calculate the BMR </p>
+      <p>This app uses the Mifflin St. Jeor equation to calculate the BMR. </p>
+      <p>Click the donut to begin.</p>
       {/* <p> */}
-      <button onClick={() => setThing("user-form")}>Start</button>
+      <div className="start-btn" onClick={() => setThing("user-form")}>
+        {/* Start */}
+      </div>
       {/* </p> */}
       <div className="legend">
         <p>
