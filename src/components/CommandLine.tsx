@@ -20,17 +20,20 @@ const CommandLine = ({ showMenu, setThing }: MenuProps) => {
   });
 
   const activateTrapCard = (selection: string) => {
+    // if (userInput.length === 0) return;
     setThing(selection);
     showMenu(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    // if (userInput == "") return;
     if (e.key !== "Enter") return;
     e.preventDefault();
     activateTrapCard(e.currentTarget.id);
   };
 
   const handleThemeChange = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    // if (userInput == "") return;
     if (e.key !== "Enter") return;
     e.preventDefault();
     setTheme(`theme-${e.currentTarget.id}`);

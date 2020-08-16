@@ -55,13 +55,17 @@ export const calculateMacros = (
   let c: number = 0;
 
   if (goal < 0 && goal >= -1) {
-    p = weight * 1.02;
+    p = weight * 0.92;
     f = weight * 0.35;
     c = (calGoal - p * 4 - f * 9) / 4;
   } else if (goal < -1) {
-    p = weight * 0.96;
+    p = weight * 0.88;
     f = weight * 0.3;
     c = (calGoal - p * 4 - f * 9) / 4;
+    if (c < 35) {
+      p = weight * 0.7;
+      c = (calGoal - p * 4 - f * 9) / 4;
+    }
   } else if (goal > 0 && goal <= 1) {
     p = weight * 1.12;
     f = weight * 0.57;

@@ -43,7 +43,8 @@ const Results = ({ user, setUser }: ResultProps) => {
           min={-2}
           max={2}
           step={0.5}
-          defaultValue={(user && user.goal) || goal}
+          // defaultValue={(user && user.goal) || goal}
+          defaultValue={goal}
           onChange={handleChange}
         />
         <div>
