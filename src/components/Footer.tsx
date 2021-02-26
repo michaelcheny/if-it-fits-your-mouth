@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -10,18 +10,19 @@ const Footer = () => {
         <span className="command">tab</span> - Next Selection
       </div>
       <div>
-        <span className="command">shift</span> <span className="command">tab</span> - Previous Selection
+        <span className="command">shift</span> <span className="command">tab</span> -
+        Previous Selection
       </div>
       <div>
         <span className="command">enter</span> - Select
       </div>
       <div>
-        Built by{" "}
+        Built by{' '}
         <a href="https://michaelchen.dev" target="_blank" rel="noopener noreferrer">
           Michael Chen
         </a>
       </div>
-      <div>v1.0.0</div>
+      <div>v1.0.1</div>
     </section>
   );
 };
