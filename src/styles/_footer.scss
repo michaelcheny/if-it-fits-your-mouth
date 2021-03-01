@@ -1,14 +1,12 @@
 #footer {
-  // margin-top: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // padding-bottom: 1.5em;
 }
 
 .command {
   border-radius: 3px;
   padding: 0 5px;
-  @include theme-aware("background-color", "btn");
+  @include theme-aware('background-color', 'btn');
 }

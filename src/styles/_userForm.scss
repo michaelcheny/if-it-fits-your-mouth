@@ -25,11 +25,10 @@
       outline: none;
       background: none;
       text-align: center;
-      @include theme-aware("color", "color-text");
+      @include theme-aware('color', 'color-text');
       &:hover {
         cursor: pointer;
-        // background-color: rgba($color: #000000, $alpha: 0.1);
-        @include theme-aware("background-color", "color-background");
+        @include theme-aware('background-color', 'color-background');
       }
       &:focus {
         background: rgba($color: #000000, $alpha: 0.1);
@@ -45,10 +44,10 @@
       overflow: hidden;
       padding: 5px 0;
       appearance: none;
-      @include theme-aware("color", "color-text");
+      @include theme-aware('color', 'color-text');
       &:hover {
         cursor: pointer;
-        @include theme-aware("background-color", "color-background");
+        @include theme-aware('background-color', 'color-background');
       }
       &:focus {
         background: rgba($color: #000000, $alpha: 0.1);
@@ -72,7 +71,7 @@
 
     .submit-btn {
       width: 100%;
-      @include theme-aware("background-color", "btn");
+      @include theme-aware('background-color', 'btn');
       &:hover {
         background-color: rgba($color: #000000, $alpha: 0.1);
       }

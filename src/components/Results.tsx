@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { User } from "../interfaces/user.interface";
-import { calculateRecommendedCals, calculateMacros } from "../helpers/calculations";
-import Macros from "./Macros";
+import React, { useState } from 'react';
+import { User } from '../interfaces/user.interface';
+import { calculateRecommendedCals, calculateMacros } from '../helpers/calculations';
+import Macros from './Macros';
 
 type ResultProps = {
   user: User | any;
@@ -23,7 +23,7 @@ const Results = ({ user, setUser }: ResultProps) => {
       ...goals,
     };
     setUser(userAttr);
-    localStorage.setItem("userStats", JSON.stringify(userAttr));
+    localStorage.setItem('userStats', JSON.stringify(userAttr));
   };
 
   let macros = calculateMacros(user.calGoal, user.weight, goal);
@@ -33,8 +33,9 @@ const Results = ({ user, setUser }: ResultProps) => {
       <div className="goal">
         <div className="title">What are your goals?</div>
         <p>
-          {goal < 0 ? "Lose" : "Gain"}{" "}
-          <span className="nums">{(user && user.goal) || Math.abs(goal)}</span> pounds a week
+          {goal < 0 ? 'Lose' : 'Gain'}{' '}
+          <span className="nums">{(user && user.goal) || Math.abs(goal)}</span> pounds a
+          week
         </p>
         <input
           type="range"
@@ -43,7 +44,6 @@ const Results = ({ user, setUser }: ResultProps) => {
           min={-2}
           max={2}
           step={0.5}
-          // defaultValue={(user && user.goal) || goal}
           defaultValue={goal}
           onChange={handleChange}
         />
