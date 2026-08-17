@@ -83,7 +83,7 @@ const App = () => {
         <div className="page">{renderMain()}</div>
       </main>
       <Footer />
-      {showMenu && <CommandLine showMenu={setShowMenu} setThing={setAppState} />}
+      {showMenu && <CommandLine showMenu={setShowMenu} />}
     </div>
   );
 };

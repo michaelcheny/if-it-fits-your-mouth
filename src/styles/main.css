@@ -986,8 +986,22 @@ a:hover {
    Responsive
    ============================================================ */
 @media (max-width: 720px) {
+  .app-header {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
   .main-nav {
-    display: none;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 6px 11px;
+    font-size: 13px;
   }
 
   .results-grid {
