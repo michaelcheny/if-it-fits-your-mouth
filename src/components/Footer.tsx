@@ -1,29 +1,16 @@
-import React from 'react';
-
 const Footer = () => {
   return (
-    <section id="footer">
+    <footer className="app-footer">
       <div>
-        <span className="command">esc</span> - Command Line
+        Press <span className="kbd">Esc</span> for commands
       </div>
       <div>
-        <span className="command">tab</span> - Next Selection
-      </div>
-      <div>
-        <span className="command">shift</span> <span className="command">tab</span> -
-        Previous Selection
-      </div>
-      <div>
-        <span className="command">enter</span> - Select
-      </div>
-      <div>
-        Built by{' '}
-        <a href="https://michaelchen.dev" target="_blank" rel="noopener noreferrer">
+        Built by{" "}
+        {/* <a href="https://github.com/michaelcheny" target="_blank" rel="noopener noreferrer"> */}
           Michael Chen
-        </a>
+        {/* </a> */}
       </div>
-      <div>v1.0.1</div>
-    </section>
+    </footer>
   );
 };
 

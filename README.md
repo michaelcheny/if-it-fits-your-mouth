@@ -1,44 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# If It Fits Your Mouth
 
-## Available Scripts
+A macronutrient calculator for flexible dieting (IIFYM). Uses the Mifflin-St Jeor equation to estimate BMR, then TDEE and daily macro targets based on your weight-change goal.
 
-In the project directory, you can run:
+## Stack
 
-### `yarn start`
+- React 19 + TypeScript 5
+- Vite 6 (dev server + production build)
+- Vitest for tests
+- Plain CSS with custom properties (no preprocessor)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting started
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```bash
+npm install
+npm run dev        # start dev server at http://localhost:5173
+```
 
-### `yarn test`
+## Scripts
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Command             | What it does                          |
+| ------------------- | ------------------------------------- |
+| `npm run dev`       | Start the Vite dev server             |
+| `npm run build`     | Type-check and build for production   |
+| `npm run preview`   | Preview the production build locally  |
+| `npm test`          | Run the Vitest test suite             |
+| `npm run typecheck` | Run TypeScript type checking only     |
 
-### `yarn build`
+## Usage
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Click the donut on the landing page to open the stats form.
+2. Enter gender, age, height, weight, and activity level.
+3. Adjust the goal slider on the results page (−2 to +2 lbs/week) — calories and macros update live.
+4. Press `Esc` anywhere to open the command palette for navigation and theme switching.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Your stats and theme persist in `localStorage`, so they survive a page reload.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Themes
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Light, Dark, Monokai, Dracula (default), and Soft Tone — switch via the command palette (`Esc`).

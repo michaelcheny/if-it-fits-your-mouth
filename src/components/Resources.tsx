@@ -1,98 +1,99 @@
-import React from 'react';
-import links from '../data/links.json';
+import links from "../data/links.json";
+
+const MACROS = [
+  {
+    name: "Fats",
+    kcal: 9,
+    color: "var(--macro-fats)",
+    description:
+      "Needed for energy, cell growth, and organ protection. Supports hormone production and nutrient absorption.",
+    sources: ["Fatty meats", "Seeds & nuts", "Avocados", "Fish", "Oils"],
+  },
+  {
+    name: "Protein",
+    kcal: 4,
+    color: "var(--macro-protein)",
+    description:
+      "Builds and repairs tissues — the foundation of bones, muscles, cartilage, skin, and blood.",
+    sources: ["Meats", "Dairy", "Fish", "Protein powder", "Beans"],
+  },
+  {
+    name: "Carbs",
+    kcal: 4,
+    color: "var(--macro-carbs)",
+    description:
+      "Your body's main fuel — powers your brain, heart, muscles, and nervous system. Fiber keeps things moving.",
+    sources: ["Veggies & fruit", "Grains & pasta", "Legumes"],
+  },
+];
 
 const Resources = () => {
   return (
-    <div className="resource-container">
-      <div className="info-container">
-        <h2>What are Macronutrients?</h2>
-        <div>
-          <div className="sub-title">
-            Fats
-            <span className="per-gram">
-              <span className="tiny-text">kcal/gram:</span> 9
-            </span>
-          </div>
+    <div>
+      <h1 className="section-title">Learn the basics</h1>
+      <p className="section-sub">Everything you need to know about flexible dieting.</p>
 
-          <div className="description">
-            Your body needs fat for energy and to support cell growth. They also help
-            protect the organs and help maintain body temperature. Helps with hormone
-            production and nutrient absorbtion.
-          </div>
-          <ul>
-            <li>Fatty meats</li>
-            <li>Seeds & Nuts</li>
-            <li>Avocados</li>
-            <li>Fish</li>
-            <li>Oils</li>
-            <li>Most junk food</li>
-          </ul>
+      {/* Macronutrients */}
+      <section className="resource-section">
+        <h2>The three macros</h2>
+        <div className="macro-cards">
+          {MACROS.map((m) => (
+            <div key={m.name} className="card macro-card">
+              <span className="legend-dot" style={{ background: m.color, width: 14, height: 14 }} />
+              <div className="macro-head">
+                <h3>{m.name}</h3>
+                <span className="kcal-chip">{m.kcal} kcal/g</span>
+              </div>
+              <p>{m.description}</p>
+              <ul>
+                {m.sources.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div>
-          <div className="sub-title">
-            Proteins
-            <span className="per-gram">
-              <span className="tiny-text">kcal/gram:</span> 4
-            </span>
-          </div>
-          <div className="description">
-            Your body uses protein to build and repair tissues. It's also a building block
-            of bones, muscles, cartilage, skin, and blood.
-          </div>
-          <ul>
-            <li>Meats</li>
-            <li>Milk, Cheese, and Yogurt</li>
-            <li>Fish</li>
-            <li>Protein powder</li>
-            <li>Beans</li>
-          </ul>
+      </section>
+
+      {/* Calorie explainer */}
+      <section className="resource-section">
+        <h2>What's a calorie?</h2>
+        <div className="card prose-card">
+          <p>
+            A calorie (kcal) is a unit of energy. Every cell in your body needs energy to function.
+            Weight change comes down to one simple equation: calories in vs. calories out. Eat less
+            than you burn and you lose weight; eat more and you gain it.
+          </p>
         </div>
-        <div>
-          <div className="sub-title">
-            Carbohydrates
-            <span className="per-gram">
-              <span className="tiny-text">kcal/gram:</span> 4
-            </span>
-          </div>
-          <div className="description">
-            Your body uses carbs as the main source of energy. They fuel your brain,
-            kidneys, heart, muscles, and central nervous system. Fiber helps you poop.
-          </div>
-          <ul>
-            <li>Veggies & Fruits</li>
-            <li>Grains, Bread, and Pastas</li>
-            <li>Most junk food</li>
-          </ul>
+      </section>
+
+      {/* IIFYM */}
+      <section className="resource-section">
+        <h2>Why flexible dieting? (IIFYM)</h2>
+        <div className="card prose-card">
+          <p>
+            You can eat donuts and ice cream — as long as they fit inside your daily macro and
+            calorie targets. That's the whole idea: no forbidden foods, just honest accounting.
+          </p>
+          <p>
+            That said, don't live on junk food alone. Whole foods still matter for long-term health.
+            Yes, you can lose weight eating McDonald's all day — but it isn't good for you.
+          </p>
         </div>
-      </div>
-      <h2>Whats a Calorie</h2>
-      <div className="description">
-        A calorie (kcal) is a unit of energy. Every cell in our body requires energy to
-        function in it's optimal state. Weightloss comes down to calories in vs calories
-        out.
-      </div>
-      <h2>Why Flexible Dieting? (IIFYM)</h2>
-      <div className="description">
-        <p>
-          You can eat donuts and ice cream as long as you account for it in your daily
-          macros/calories.
-        </p>
-        <p>
-          Don't go overboard on sugars and junk food. Eating healthy is still recommended
-          for overall health. (Yes, it is possible to lose weight eating McDonalds all
-          day, but it is NOT good for you.)
-        </p>
-      </div>
-      <h2>Other Resources</h2>
-      <ul>
-        {links.map((link, idx) => (
-          <li key={idx}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
+      </section>
+
+      {/* Links */}
+      <section className="resource-section">
+        <h2>Go deeper</h2>
+        <div className="link-list">
+          {links.map((link) => (
+            <a key={link.url} className="link-item" href={link.url} target="_blank" rel="noopener noreferrer">
               {link.text}
+              <span className="arrow">↗</span>
             </a>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
