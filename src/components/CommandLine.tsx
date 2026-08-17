@@ -1,80 +1,112 @@
-import React, { useRef, useLayoutEffect, useState } from 'react';
-import { useClickOutside } from '../hooks/useClickOutside';
-import FocusTrap from 'focus-trap-react';
-import { setTheme } from '../helpers/themeChange';
-import CommandSelection from './CommandSelection';
-import commands from '../data/commandSelections.json';
+import { useEffect, useRef, useState } from "react";
+import type { AppState } from "../interfaces/appstate.interface";
+import { setTheme } from "../helpers/themeChange";
 
 type MenuProps = {
   showMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  setThing: React.Dispatch<React.SetStateAction<string>>;
+  setThing: (state: AppState) => void;
 };
 
+const THEME_KEY = "iifym-theme";
+
+type Command = {
+  id: string;
+  text: string;
+  kind: "page" | "theme";
+  swatch?: string;
+};
+
+const COMMANDS: Command[] = [
+  { id: "intro", text: "Go to Home", kind: "page" },
+  { id: "user-form", text: "Edit Your Stats", kind: "page" },
+  { id: "result", text: "View Results", kind: "page" },
+  { id: "resources", text: "Learn About Macros", kind: "page" },
+  { id: "light", text: "Theme: Light", kind: "theme", swatch: "#f6f7f9" },
+  { id: "dark", text: "Theme: Dark", kind: "theme", swatch: "#16181d" },
+  { id: "monokai", text: "Theme: Monokai", kind: "theme", swatch: "#a6e22e" },
+  { id: "dracula", text: "Theme: Dracula", kind: "theme", swatch: "#ff79c6" },
+  { id: "soft-tone", text: "Theme: Soft Tone", kind: "theme", swatch: "#5f8a6e" },
+];
+
 const CommandLine = ({ showMenu, setThing }: MenuProps) => {
-  const input = useRef<HTMLInputElement>(null);
-  const [userInput, setUserInput] = useState('');
-  const insideNode = useClickOutside(() => showMenu(false));
+  const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const [query, setQuery] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  useLayoutEffect(() => {
-    if (input.current !== null) input.current.focus();
-  });
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
-  const activateTrapCard = (selection: string) => {
-    setThing(selection);
-    showMenu(false);
-  };
+  useEffect(() => {
+    const onClickOutside = (e: MouseEvent) => {
+      if (listRef.current && !listRef.current.contains(e.target as Node)) {
+        showMenu(false);
+      }
+    };
+    document.addEventListener("click", onClickOutside);
+    return () => document.removeEventListener("click", onClickOutside);
+  }, [showMenu]);
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key !== 'Enter') return;
-    e.preventDefault();
-    activateTrapCard(e.currentTarget.id);
-  };
+  const filtered = COMMANDS.filter((c) => c.text.toLowerCase().includes(query));
 
-  const handleThemeChange = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key !== 'Enter') return;
-    e.preventDefault();
-    setTheme(`theme-${e.currentTarget.id}`);
-    localStorage.setItem('iifym-theme', `theme-${e.currentTarget.id}`);
-    showMenu(false);
-  };
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [query]);
 
-  // Add hiding effect
-  const selections = Array.from(
-    document.getElementsByClassName('selection') as HTMLCollectionOf<HTMLElement>
-  );
-  selections.forEach((element) => {
-    if (!element.innerText.toLowerCase().includes(userInput)) {
-      element.style.display = 'none';
+  const runCommand = (cmd: Command) => {
+    if (cmd.kind === "theme") {
+      const theme = `theme-${cmd.id}`;
+      setTheme(theme);
+      localStorage.setItem(THEME_KEY, theme);
     } else {
-      element.style.display = 'block';
+      setThing(cmd.id as AppState);
     }
-  });
+    showMenu(false);
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setActiveIndex((i) => Math.min(i + 1, filtered.length - 1));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActiveIndex((i) => Math.max(i - 1, 0));
+    } else if (e.key === "Enter" && filtered[activeIndex]) {
+      e.preventDefault();
+      runCommand(filtered[activeIndex]);
+    }
+  };
 
   return (
-    <FocusTrap>
-      <div className="menu-modal">
-        <form ref={insideNode}>
-          <input
-            ref={input}
-            type="text"
-            placeholder="Type a command"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value.toLowerCase())}
-            tabIndex={0}
-          />
-          <div className="selections">
-            {commands.map((command) => (
-              <CommandSelection
-                key={command.id}
-                id={command.id}
-                cb={command.cb === 'page' ? handleKeyPress : handleThemeChange}
-                text={command.text}
-              />
-            ))}
-          </div>
-        </form>
+    <div className="palette-overlay" onClick={() => showMenu(false)}>
+      <div className="palette" ref={listRef} onClick={(e) => e.stopPropagation()}>
+        <input
+          ref={inputRef}
+          className="palette-input"
+          type="text"
+          placeholder="Type a command…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value.toLowerCase())}
+          onKeyDown={onKeyDown}
+        />
+        <div className="palette-list">
+          {filtered.length === 0 && <div className="palette-empty">No matching commands</div>}
+          {filtered.map((cmd, i) => (
+            <button
+              key={cmd.id}
+              className={`palette-item${i === activeIndex ? " focused" : ""}`}
+              style={i === activeIndex ? { background: "var(--surface)" } : undefined}
+              onMouseEnter={() => setActiveIndex(i)}
+              onClick={() => runCommand(cmd)}
+            >
+              {cmd.swatch && <span className="swatch" style={{ background: cmd.swatch }} />}
+              {cmd.text}
+            </button>
+          ))}
+        </div>
       </div>
-    </FocusTrap>
+    </div>
   );
 };
 
